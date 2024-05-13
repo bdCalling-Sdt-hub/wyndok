@@ -55,66 +55,7 @@ class HomeControllerPatients extends GetxController {
       "categories": "Cardiologist",
       "rating": 4.7
     },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
-    {
-      "name": "Katryn Murphy".tr,
-      "image": AppImages.katryn,
-      "categories": "Cardiologist",
-      "rating": 4.7
-    },
+
 
 
   ];
