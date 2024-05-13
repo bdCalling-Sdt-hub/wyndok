@@ -11,6 +11,8 @@ import 'package:wyndok/view/common_widgets/image/custom_image.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 import 'package:wyndok/view/common_widgets/text_field/custom_text_field.dart';
 
+import '../../../common_widgets/bottom nav bar/navbar.dart';
+
 class PatientsHomeScreen extends StatelessWidget {
   const PatientsHomeScreen({super.key});
 
@@ -101,6 +103,7 @@ class PatientsHomeScreen extends StatelessWidget {
                           height: 110.sp,
                           child: GridView.builder(
                             padding: EdgeInsets.zero,
+                            physics: const NeverScrollableScrollPhysics(),
                             itemCount: controller.services.length,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
@@ -154,6 +157,7 @@ class PatientsHomeScreen extends StatelessWidget {
                           height: 200.sp,
                           child: GridView.builder(
                             padding: EdgeInsets.zero,
+                            physics: const NeverScrollableScrollPhysics(),
                             itemCount: controller.categories.length,
                             gridDelegate:
                                 SliverGridDelegateWithFixedCrossAxisCount(
@@ -201,14 +205,63 @@ class PatientsHomeScreen extends StatelessWidget {
                         height: 20.h,
                       ),
                       SizedBox(
-                        height: 300,
-                        child: ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return Container();
-                          },
-                        ),
-                      )
+                          child: ListView.builder(
+                        padding: EdgeInsets.zero,
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: controller.doctors.length,
+                        itemBuilder: (context, index) {
+                          var item = controller.doctors[index];
+                          return Container(
+                            margin: EdgeInsets.only(bottom: 12.h),
+                            padding: EdgeInsets.all(16.sp),
+                            decoration: BoxDecoration(
+                                border: Border.all(color: AppColors.blueNormal),
+                                borderRadius: BorderRadius.circular(10.r)),
+                            child: Row(
+                              children: [
+                                CustomImage(
+                                  imageSrc: item["image"],
+                                  imageType: ImageType.png,
+                                  height: 62.sp,
+                                ),
+                                SizedBox(
+                                  width: 16.w,
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Flexible(
+                                            child: CustomText(
+                                              text: item["name"],
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 20.sp,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          CustomText(
+                                              text: item["rating"].toString()),
+                                          const Icon(Icons.star)
+                                        ],
+                                      ),
+                                      CustomText(
+                                        text: item["categories"],
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 18.sp,
+                                        color: AppColors.blueNormal,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      )),
                     ],
                   ),
                 )
@@ -216,6 +269,9 @@ class PatientsHomeScreen extends StatelessWidget {
             ),
           );
         },
+      ),
+      bottomNavigationBar: const CustomBottomNavBar(
+        currentIndex: 0,
       ),
     );
   }
