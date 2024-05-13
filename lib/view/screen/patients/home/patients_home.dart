@@ -86,7 +86,132 @@ class PatientsHomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: "Wyndok Services".tr,
+                        fontSize: 20.sp,
+                        top: 12.h,
+                        bottom: 20.h,
+                      ),
+                      SizedBox(
+                          height: 110.sp,
+                          child: GridView.builder(
+                            padding: EdgeInsets.zero,
+                            itemCount: controller.services.length,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 3, crossAxisSpacing: 38.sp),
+                            itemBuilder: (context, index) {
+                              var item = controller.services[index];
+                              return Container(
+                                height: 90.sp,
+                                width: 90.sp,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: AppColors.blueLightActive,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.r)),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CustomImage(
+                                      imageSrc: item["image"],
+                                      imageType: ImageType.png,
+                                      height: 52.sp,
+                                    ),
+                                    CustomText(text: item["name"])
+                                  ],
+                                ),
+                              );
+                            },
+                          )),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: "Categories".tr,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20.sp,
+                          ),
+                          CustomText(
+                            text: "See All".tr,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14.sp,
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      SizedBox(
+                          height: 200.sp,
+                          child: GridView.builder(
+                            padding: EdgeInsets.zero,
+                            itemCount: controller.categories.length,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 4,
+                                    crossAxisSpacing: 20.sp,
+                                    mainAxisExtent: 100.sp),
+                            itemBuilder: (context, index) {
+                              var item = controller.categories[index];
+                              return Container(
+                                height: 62.sp,
+                                width: 62.sp,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CustomImage(
+                                      imageSrc: item["image"],
+                                      imageType: ImageType.png,
+                                      height: 62.sp,
+                                    ),
+                                    CustomText(text: item["name"])
+                                  ],
+                                ),
+                              );
+                            },
+                          )),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomText(
+                            text: "Top Doctors".tr,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20.sp,
+                          ),
+                          CustomText(
+                            text: "See All".tr,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 14.sp,
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      SizedBox(
+                        height: 300,
+                        child: ListView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Container();
+                          },
+                        ),
+                      )
+                    ],
+                  ),
+                )
               ],
             ),
           );
