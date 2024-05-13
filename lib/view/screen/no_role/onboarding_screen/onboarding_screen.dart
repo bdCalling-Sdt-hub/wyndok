@@ -34,13 +34,14 @@ class OnboardingScreen extends StatelessWidget {
             ),
             CustomButton(
               titleText: "Sign in with password".tr,
+              onTap: () => Get.toNamed(AppRoutes.signIn),
             ),
             SizedBox(
               height: 24.h,
             ),
             CustomButton(
               titleText: "Sign up".tr,
-              onPressed: () => Get.toNamed(AppRoutes.signUp),
+              onTap: () => Get.toNamed(AppRoutes.signUp),
             ),
           ],
         ),

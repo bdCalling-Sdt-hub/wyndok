@@ -40,7 +40,8 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
             ),
             CustomTextField(
               controller: controller.passwordController,
-              prefixIcon: const Icon(Icons.mail),
+              prefixIcon: const Icon(Icons.lock),
+              isPassword: true,
               labelText: "Password".tr,
             ),
             SizedBox(
@@ -98,7 +99,7 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
           side: const BorderSide(color: AppColors.primaryColor)),
       itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
         PopupMenuItem<String>(
-          value: 'option1',
+          value: 'Male',
           child: Column(
             children: List.generate(
               controller.list.length,
@@ -113,14 +114,17 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          border: Border.all(color: AppColors.back),
-                          color: AppColors.back,
+                          border: Border.all(color: AppColors.black),
+                          color: controller.genderController.text ==
+                                  controller.list[index]
+                              ? AppColors.primaryColor
+                              : AppColors.white,
                           shape: BoxShape.circle,
                         ),
                       ),
                       CustomText(
                         text: controller.list[index].toString(),
-                        color: AppColors.back,
+                        color: AppColors.black,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                         left: 12,
@@ -133,13 +137,7 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
           ),
         ),
       ],
-      onOpened: () {
-        controller.onChangeItem(false);
-      },
-      onCanceled: () {
-        controller.onChangeItem(true);
-      },
-      icon: controller.isOpen
+      icon: controller.isPopUpOpen
           ? const Icon(
               Icons.keyboard_arrow_up_outlined,
               color: Colors.black,

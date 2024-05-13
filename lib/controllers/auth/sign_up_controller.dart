@@ -2,24 +2,30 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SignUpController extends GetxController {
-  bool isOpen = false;
+  bool isPopUpOpen = false;
 
   List list = ["Male", "Female", "Other"];
+  List selectedOption = ["Patient", "Health Professional"];
+
+  String selectRole = "";
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController numberController = TextEditingController();
-  TextEditingController genderController = TextEditingController();
+  TextEditingController genderController = TextEditingController(text: "Male");
   TextEditingController addressController = TextEditingController();
 
-  onChangeItem(bool value) {
-    isOpen = value;
+  setSelectedRole(value) {
+    selectRole = value;
     update();
   }
 
   onSelectItem(int index) {
     genderController.text = list[index];
     update();
+    isPopUpOpen = false;
+    update();
+    Get.back();
   }
 }

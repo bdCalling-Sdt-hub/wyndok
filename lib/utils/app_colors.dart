@@ -7,76 +7,50 @@ class AppColors {
   static const Color secondary = Color(0xff454545);
   static const Color textSecondary = Color(0xFFB2B2B2);
   static const Color background = Colors.white;
-  static const Color back = Colors.black;
-  static const Color textFiledColor= Color(0xFFF9F9F9);
+  static const Color black = Colors.black;
+  static const Color orange = Colors.orange;
+  static const Color blue = Colors.blue;
+  static const Color white = Colors.white;
+  static const Color textFiledColor = Color(0xFFF9F9F9);
+  static const Color greyscale = Color(0xFFE0E0E0);
   static const Color transparent = Colors.transparent;
 
+  /// ========================> orange <========================================
 
-  /// ========================> Yellow <========================================
+  static const Color orangeLight = Color(0xfffff5e9);
+  static const Color orangeLightHover = Color(0xfffff0dd);
+  static const Color orangeLightActive = Color(0xffffdfba);
+  static const Color orangeNormal = Color(0xffff981f);
+  static const Color orangeNormalHover = Color(0xffe6891c);
+  static const Color orangeNormalActive = Color(0xffcc7a19);
+  static const Color orangeDark = Color(0xffbf7217);
+  static const Color orangeDarkHover = Color(0xff995b13);
+  static const Color orangeDarkActive = Color(0xff73440e);
+  static const Color orangeDarker = Color(0xff59350b);
 
+  /// ========================> blue <========================================
 
+  static const Color blueLight = Color(0xffe8f5fe);
+  static const Color blueLightHover = Color(0xffddeffd);
+  static const Color blueLightActive = Color(0xffb8defa);
+  static const Color blueNormal = Color(0xff1a96f0);
+  static const Color blueNormalHover = Color(0xff1787d8);
+  static const Color blueNormalActive = Color(0xff1578c0);
+  static const Color blueDark = Color(0xff1471b4);
+  static const Color blueDarkHover = Color(0xff105a90);
+  static const Color blueDarkActive = Color(0xff0c446c);
+  static const Color blueDarker = Color(0xff093554);
 
-  static const Color yellow50 = Color(0xffFAF6EF);
-  static const Color yellow100 = Color(0xffF8F2E6);
-  static const Color yellow200 = Color(0xffF0E3CC);
-  static const Color yellow300 = Color(0xffD0A65A);
-  static const Color yellow400 = Color(0xffBB9551);
-  static const Color yellow500 = Color(0xffA68548);
-  static const Color yellow600 = Color(0xff9C7D44);
-  static const Color yellow700 = Color(0xff7D6436);
-  static const Color yellow800 = Color(0xff5E4B28);
-  static const Color yellow900 = Color(0xff493A1F);
+  /// ========================> White <========================================
 
-
-/// ========================> Grey <========================================
-
-
-
-  static const Color grey50 = Color(0xffECECEC);
-  static const Color grey100 = Color(0xffE3E3E3);
-  static const Color grey200 = Color(0xffC5C5C5);
-  static const Color grey300 = Color(0xff454545);
-  static const Color grey400 = Color(0xff3E3E3E);
-  static const Color grey500 = Color(0xff373737);
-  static const Color grey600 = Color(0xff343434);
-  static const Color grey700 = Color(0xff292929);
-  static const Color grey800 = Color(0xff1F1F1F);
-  static const Color grey900 = Color(0xff181818);
-
-
-
-/// ========================> White <========================================
-
-  static const Color white50 = Color(0xffFFFFFF);
-  static const Color white100 = Color(0xffFFFFFF);
-  static const Color white200 = Color(0xffFFFFFF);
-  static const Color white300 = Color(0xffFFFFFF);
-  static const Color white400 = Color(0xffE6E6E6);
-  static const Color white500 = Color(0xffCCCCCC);
-  static const Color white600 = Color(0xffBFBFBF);
-  static const Color white700 = Color(0xff999999);
-  static const Color white800 = Color(0xff737373);
-  static const Color white900 = Color(0xff595959);
-
-
-
-/// ========================> Orange <========================================
-
-
-
-  static const Color orange50 = Color(0xffFAF2EA);
-  static const Color orange100 = Color(0xffF8ECDF);
-  static const Color orange200 = Color(0xffF0D7BD);
-  static const Color orange300 = Color(0xffD07E2B);
-  static const Color orange400 = Color(0xffBB7127);
-  static const Color orange500 = Color(0xffA66522);
-  static const Color orange600 = Color(0xff9C5F20);
-  static const Color orange700 = Color(0xff7D4C1A);
-  static const Color orange800 = Color(0xff5E3913);
-  static const Color orange900 = Color(0xff492C0F);
-
-
-
-
-
+  static const Color blackLight = Color(0xffe6e6e6);
+  static const Color blackLightHover = Color(0xffd9d9d9);
+  static const Color blackLightActive = Color(0xffb0b0b0);
+  static const Color blackNormal = Color(0xff000000);
+  static const Color blackNormalHover = Color(0xff000000);
+  static const Color blackNormalActive = Color(0xff000000);
+  static const Color blackDark = Color(0xff000000);
+  static const Color blackDarkHover = Color(0xff000000);
+  static const Color blackDarkActive = Color(0xff000000);
+  static const Color blackDarker = Color(0xff000000);
 }

@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../utils/app_colors.dart';
 
 class CustomButton extends StatelessWidget {
-  final VoidCallback? onPressed;
+  final VoidCallback? onTap;
   final String titleText;
   final Color titleColor;
   final Color buttonColor;
@@ -18,9 +18,9 @@ class CustomButton extends StatelessWidget {
   final double? buttonWidth;
 
   const CustomButton(
-      {this.onPressed,
+      {this.onTap,
       required this.titleText,
-      this.titleColor = AppColors.white50,
+      this.titleColor = AppColors.white,
       this.buttonColor = AppColors.primaryColor,
       this.titleSize,
       this.buttonRadius,
@@ -37,7 +37,7 @@ class CustomButton extends StatelessWidget {
       height: buttonHeight ?? 58.h,
       width: buttonWidth,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: onTap,
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(buttonColor),
             shape: MaterialStateProperty.all(

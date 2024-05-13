@@ -38,11 +38,11 @@ class NoInternet extends StatelessWidget {
               bottom: 20.h,
             ),
             CustomButton(
-              onPressed: () => Get.back(),
+              onTap: () => Get.back(),
               titleText: "Back".tr,
               buttonWidth: 80.w,
               buttonHeight: 40.h,
-              buttonColor: AppColors.grey900,
+              buttonColor: AppColors.primaryColor,
             )
           ],
         ),

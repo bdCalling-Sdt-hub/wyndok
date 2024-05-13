@@ -14,7 +14,7 @@ class AppbarIcon extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(8.sp),
       child: CircleAvatar(
-          backgroundColor: AppColors.white50,
+          backgroundColor: AppColors.white,
           child: ClipOval(child: InkWell(
               child: GestureDetector(
                 onTap: () => Get.back(),
