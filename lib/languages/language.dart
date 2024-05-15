@@ -48,6 +48,9 @@ class LocalConstants extends Translations {
           "Vaccinat..": "Vaccinat..",
           "Top Doctors": "Top Doctors",
           "Katryn Murphy": "Katryn Murphy",
+          "Appointment": "Appointment",
+          "Search": "Search",
+          "Ping Your Location": "Ping Your Location",
         },
       };
 }

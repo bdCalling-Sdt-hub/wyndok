@@ -4,9 +4,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wyndok/controllers/patients/home_controller.dart';
+import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/utils/app_icons.dart';
-import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/image/custom_image.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 import 'package:wyndok/view/common_widgets/text_field/custom_text_field.dart';
@@ -58,9 +58,13 @@ class PatientsHomeScreen extends StatelessWidget {
                         height: 50.sp,
                         child: Row(
                           children: [
-                            const Expanded(
+                            Expanded(
                               child: CustomTextField(
-                                prefixIcon: Icon(
+                                hindText: "Ping Your Location".tr,
+                                textStyle:
+                                    const TextStyle(color: AppColors.greyscale),
+                                cursorColor: AppColors.greyscale,
+                                prefixIcon: const Icon(
                                   Icons.location_on_outlined,
                                   color: AppColors.white,
                                 ),
@@ -143,10 +147,13 @@ class PatientsHomeScreen extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                             fontSize: 20.sp,
                           ),
-                          CustomText(
-                            text: "See All".tr,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14.sp,
+                          GestureDetector(
+                            onTap: () => Get.toNamed(AppRoutes.cotegoriseList),
+                            child: CustomText(
+                              text: "See All".tr,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14.sp,
+                            ),
                           )
                         ],
                       ),

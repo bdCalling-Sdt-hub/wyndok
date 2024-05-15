@@ -13,14 +13,14 @@ class CustomTextField extends StatefulWidget {
       this.keyboardType = TextInputType.text,
       this.textInputAction = TextInputAction.next,
       this.cursorColor = AppColors.black,
-      this.inputTextStyle,
       this.textAlignVertical = TextAlignVertical.center,
       this.textAlign = TextAlign.start,
       this.onChanged,
       this.maxLines = 1,
       this.validator,
       this.labelText,
-      this.labelStyle,
+      this.hindText,
+      this.textStyle,
       this.fillColor = AppColors.textFiledColor,
       this.suffixIcon,
       this.suffixIconColor,
@@ -39,7 +39,6 @@ class CustomTextField extends StatefulWidget {
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final Color cursorColor;
-  final TextStyle? inputTextStyle;
   final TextAlignVertical? textAlignVertical;
   final TextAlign textAlign;
   final int? maxLines;
@@ -47,7 +46,8 @@ class CustomTextField extends StatefulWidget {
   final void Function(String)? onFieldSubmitted;
   final FormFieldValidator? validator;
   final String? labelText;
-  final TextStyle? labelStyle;
+  final String? hindText;
+  final TextStyle? textStyle;
   final Color? fillColor;
   final Color? suffixIconColor;
   final Widget? suffixIcon;
@@ -82,7 +82,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       keyboardType: widget.keyboardType,
       textInputAction: widget.textInputAction,
       cursorColor: widget.cursorColor,
-      style: widget.inputTextStyle,
+      style: widget.textStyle,
       onChanged: widget.onChanged,
       maxLines: widget.maxLines,
       obscureText: widget.isPassword ? obscureText : false,
@@ -90,10 +90,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 14.w),
         labelText: widget.labelText,
-        labelStyle: widget.labelStyle,
+        hintText: widget.hindText,
+        labelStyle: widget.textStyle,
+        hintStyle: widget.textStyle,
         fillColor: widget.fillColor,
         filled: true,
         prefixIcon: widget.prefixIcon,
+
         suffixIcon: widget.isPassword
             ? GestureDetector(
                 onTap: toggle,

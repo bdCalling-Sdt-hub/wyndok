@@ -8,6 +8,7 @@ import '../view/screen/no_role/auth/sign in/sign_in_screen.dart';
 import '../view/screen/no_role/auth/sign up/sign_up_screen.dart';
 import '../view/screen/no_role/auth/sign up/verify_user.dart';
 import '../view/screen/no_role/splash/splash_screen.dart';
+import '../view/screen/patients/categories/cotegorise_list.dart';
 import '../view/screen/patients/home/patients_home.dart';
 import '../view/screen/test_screen.dart';
 
@@ -22,6 +23,7 @@ class AppRoutes {
   static const String createPassword = "/vcreate_password.dart";
   static const String patientsHome = "/patients_home.dart";
   static const String verifyUser = "/verify_user.dart";
+  static const String cotegoriseList = "/cotegorise_list.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -34,5 +36,6 @@ class AppRoutes {
     GetPage(name: createPassword, page: () => CreatePassword()),
     GetPage(name: patientsHome, page: () => PatientsHomeScreen()),
     GetPage(name: verifyUser, page: () => VerifyUser()),
+    GetPage(name: cotegoriseList, page: () => CategoriseListScreen()),
   ];
 }
