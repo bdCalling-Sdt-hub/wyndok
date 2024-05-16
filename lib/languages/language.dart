@@ -51,6 +51,11 @@ class LocalConstants extends Translations {
           "Appointment": "Appointment",
           "Search": "Search",
           "Ping Your Location": "Ping Your Location",
+          "Doctor Details": "Doctor Details",
+          "About me": "About me",
+          "Working Time": "Working Time",
+          "Reviews": "Reviews",
+          "Book Appointment": "Book Appointment",
         },
       };
 }

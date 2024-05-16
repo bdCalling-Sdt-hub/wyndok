@@ -7,7 +7,21 @@ import 'package:wyndok/view/common_widgets/image/custom_image.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 
 class DoctorListItem extends StatelessWidget {
-  const DoctorListItem({super.key});
+  DoctorListItem({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.rating,
+    required this.address,
+  });
+
+  final String image;
+
+  final String name;
+
+  final String rating;
+
+  final String address;
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +34,14 @@ class DoctorListItem extends StatelessWidget {
       child: Row(
         children: [
           CustomImage(
-            imageSrc: AppImages.doctor,
+            imageSrc: image,
             imageType: ImageType.png,
             height: 96.sp,
             width: 96.sp,
           ),
-          SizedBox(width: 16.w,),
+          SizedBox(
+            width: 16.w,
+          ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +50,7 @@ class DoctorListItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: CustomText(
-                        text: "Dr. Rodger Struck",
+                        text: name,
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
                         textAlign: TextAlign.start,
@@ -46,14 +62,14 @@ class DoctorListItem extends StatelessWidget {
                       color: Colors.amber,
                     ),
                     CustomText(
-                      text: "4.8",
+                      text: rating,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ],
                 ),
                 CustomText(
-                  text: "Heart Surgeon, London, England",
+                  text: address,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w700,
                   maxLines: 1,
@@ -65,11 +81,11 @@ class DoctorListItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10.w, vertical: 6.h),
                         decoration: BoxDecoration(
-                          color: AppColors.blueLight,
-                          borderRadius: BorderRadius.circular(8.r)
-                        ),
+                            color: AppColors.blueLight,
+                            borderRadius: BorderRadius.circular(8.r)),
                         child: CustomText(
                           text: "Appointment",
                           fontSize: 14.sp,
@@ -79,21 +95,27 @@ class DoctorListItem extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
                       margin: EdgeInsets.symmetric(horizontal: 12.w),
                       decoration: BoxDecoration(
                           color: AppColors.blueLight,
-                          borderRadius: BorderRadius.circular(8.r)
+                          borderRadius: BorderRadius.circular(8.r)),
+                      child: Icon(
+                        Icons.mail_outline_outlined,
+                        size: 20.sp,
                       ),
-                      child: Icon(Icons.mail_outline_outlined, size: 20.sp,),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
                       decoration: BoxDecoration(
-                        color: AppColors.blueLight,
-                        borderRadius: BorderRadius.circular(8.r)
+                          color: AppColors.blueLight,
+                          borderRadius: BorderRadius.circular(8.r)),
+                      child: Icon(
+                        Icons.favorite_border,
+                        size: 20.sp,
                       ),
-                      child: Icon(Icons.favorite_border, size: 20.sp,),
                     ),
                   ],
                 ),

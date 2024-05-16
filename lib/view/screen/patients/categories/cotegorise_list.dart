@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wyndok/controllers/patients/home_controller.dart';
+import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_colors.dart';
+import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 
 import '../../../common_widgets/text_field/custom_text_field.dart';
@@ -97,7 +99,14 @@ class CategoriseListScreen extends StatelessWidget {
                 itemCount: 8,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return const DoctorListItem();
+                  return GestureDetector(
+                      onTap: () => Get.toNamed(AppRoutes.doctorDetails),
+                      child: DoctorListItem(
+                        image: AppImages.doctor,
+                        name: "Dr. Maria Waston",
+                        rating: "4.8",
+                        address: "Heart Surgeon, London, England",
+                      ));
                 },
               ),
             )
