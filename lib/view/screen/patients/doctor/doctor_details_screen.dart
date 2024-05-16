@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/button/custom_button.dart';
@@ -219,7 +220,10 @@ class DoctorDetailsScreen extends StatelessWidget {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(bottom: 24.h, right: 20.w, left: 20.w),
-        child: CustomButton(titleText: "Book Appointment".tr),
+        child: CustomButton(
+          titleText: "Book Appointment".tr,
+          onTap: () => Get.toNamed(AppRoutes.bookAppointment),
+        ),
       ),
     );
   }

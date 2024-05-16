@@ -56,6 +56,12 @@ class LocalConstants extends Translations {
           "Working Time": "Working Time",
           "Reviews": "Reviews",
           "Book Appointment": "Book Appointment",
+          "Enter valid email": "Enter valid email",
+          "This field is required": "This field is required",
+          "Patients Name": "Patients Name",
+          "Enter Name": "Enter Name",
+          "Date of birth": "Date of birth",
+          "Next": "Next",
         },
       };
 }

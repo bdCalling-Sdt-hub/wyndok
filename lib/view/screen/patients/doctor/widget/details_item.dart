@@ -22,7 +22,7 @@ class DetailsItem extends StatelessWidget {
           radius: 28.sp,
           backgroundColor: AppColors.greyscale200,
           child: ClipOval(
-            child: Icon(icon, size: 30.sp,),
+            child: Icon(icon, size: 30.sp, color: AppColors.black,),
           ),
         ),
         CustomText(

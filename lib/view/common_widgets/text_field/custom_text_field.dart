@@ -87,6 +87,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       maxLines: widget.maxLines,
       obscureText: widget.isPassword ? obscureText : false,
       validator: widget.validator,
+      showCursor: widget.keyboardType == TextInputType.none ? false : true,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 14.w),
         labelText: widget.labelText,
@@ -96,7 +97,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
         fillColor: widget.fillColor,
         filled: true,
         prefixIcon: widget.prefixIcon,
-
         suffixIcon: widget.isPassword
             ? GestureDetector(
                 onTap: toggle,
