@@ -14,6 +14,8 @@ import '../view/screen/patients/Booking/select_data_time.dart';
 import '../view/screen/patients/categories/cotegorise_list.dart';
 import '../view/screen/patients/doctor/doctor_details_screen.dart';
 import '../view/screen/patients/home/patients_home.dart';
+import '../view/screen/patients/message/chat_screen.dart';
+import '../view/screen/patients/message/message_screen.dart';
 import '../view/screen/test_screen.dart';
 
 class AppRoutes {
@@ -32,6 +34,8 @@ class AppRoutes {
   static const String bookAppointment = "/book_appointment.dart";
   static const String selectDataTime = "/select_data_time.dart";
   static const String myBooking = "/my_booking_screen.dart";
+  static const String chat = "/chat_screen.dart";
+  static const String message = "/message_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -49,5 +53,7 @@ class AppRoutes {
     GetPage(name: bookAppointment, page: () => BookingAppointmentScreen()),
     GetPage(name: selectDataTime, page: () => SelectDataTime()),
     GetPage(name: myBooking, page: () => MyBookingScreen()),
+    GetPage(name: chat, page: () => ChatListScreen()),
+    GetPage(name: message, page: () => MessageScreen()),
   ];
 }

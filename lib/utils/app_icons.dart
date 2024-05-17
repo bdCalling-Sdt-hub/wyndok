@@ -6,4 +6,6 @@ class AppIcons {
   static const String notifications = "$baseurl/nofications.svg";
   static const String onBrodingOmage = "$baseurl/onbroding_image.svg";
   static const String chat = "$baseurl/chat.svg";
+  static const String file = "$baseurl/file.svg";
+  static const String send = "$baseurl/send.svg";
 }

@@ -81,6 +81,7 @@ class LocalConstants extends Translations {
           "Cancel": "Cancel",
           "Re-Book": "Re-Book",
           "Add Review": "Add Review",
+          "Messages": "Messages",
         },
       };
 }

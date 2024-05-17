@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:wyndok/core/app_routes.dart';
+import 'package:wyndok/utils/app_images.dart';
+import 'package:wyndok/view/common_widgets/appbar_icon/appbar.dart';
+import 'package:wyndok/view/screen/patients/message/widget/chat_list_item.dart';
+
+import '../../../common_widgets/text/custom_text.dart';
+
+class ChatListScreen extends StatelessWidget {
+  const ChatListScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            centerTitle: true,
+            title: CustomText(
+              text: "Messages".tr,
+              fontWeight: FontWeight.w600,
+              fontSize: 24.sp,
+            )),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+          child: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () => Get.toNamed(AppRoutes.message),
+                child: ChatListItem(
+                  image: AppImages.doctorSarah,
+                  name: "Favour Nwaeze",
+                  message: "Hello Ken, Hope you are doing great",
+                ),
+              );
+            },
+          ),
+        ));
+  }
+}
