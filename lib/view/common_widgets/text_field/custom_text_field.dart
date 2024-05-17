@@ -77,6 +77,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       onFieldSubmitted: widget.onFieldSubmitted,
       readOnly: widget.readOnly,
       controller: widget.controller,
+
       focusNode: widget.focusNode,
       maxLength: widget.maxLength,
       keyboardType: widget.keyboardType,
@@ -126,7 +127,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         focusedBorder: OutlineInputBorder(
             borderRadius:
                 BorderRadius.circular(widget.fieldBorderRadius ?? 16.r),
-            borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
+            borderSide: const BorderSide(color: AppColors.blue, width: 1),
             gapPadding: 0),
         enabledBorder: OutlineInputBorder(
             borderRadius:

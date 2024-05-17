@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../utils/app_colors.dart';
 
@@ -46,5 +48,33 @@ class OtherHelper {
     if (picked != null) {
       controller.text = "${picked.year}/${picked.month}/${picked.day}";
     }
+  }
+
+  static Future<String?> openGallery() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? getImages =
+        await picker.pickImage(source: ImageSource.gallery, imageQuality: 50);
+    if (getImages == null) return null;
+
+    if (kDebugMode) {
+      print(getImages.path);
+    }
+
+    return getImages.path;
+  }
+
+  //Pick Image from Camera
+
+  static Future<String?> openCamera() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? getImages =
+        await picker.pickImage(source: ImageSource.camera, imageQuality: 50);
+    if (getImages == null) return null;
+
+    if (kDebugMode) {
+      print(getImages.path);
+    }
+
+    return getImages.path;
   }
 }

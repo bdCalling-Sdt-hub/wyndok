@@ -56,7 +56,9 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         padding: EdgeInsets.all(12.sp),
         decoration: BoxDecoration(
             color: AppColors.blueLight,
-            borderRadius: BorderRadius.all(Radius.circular(10.r))),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.r),
+                topRight: Radius.circular(20.r))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(unselectedIcons.length, (index) {

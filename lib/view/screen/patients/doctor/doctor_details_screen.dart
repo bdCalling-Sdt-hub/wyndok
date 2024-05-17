@@ -7,6 +7,7 @@ import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 
+import '../../../common_widgets/bottom nav bar/navbar.dart';
 import 'widget/details_item.dart';
 import 'widget/review_item.dart';
 
@@ -200,7 +201,7 @@ class DoctorDetailsScreen extends StatelessWidget {
               height: 16.h,
             ),
             SizedBox(
-              height: 200.h,
+              height: 135.h,
               child: ListView.builder(
                 itemCount: 6,
                 scrollDirection: Axis.horizontal,
@@ -214,16 +215,19 @@ class DoctorDetailsScreen extends StatelessWidget {
                   );
                 },
               ),
+            ),
+            SizedBox(
+              height: 16.h,
+            ),
+            CustomButton(
+              titleText: "Book Appointment".tr,
+              onTap: () => Get.toNamed(AppRoutes.bookAppointment),
             )
           ],
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(bottom: 24.h, right: 20.w, left: 20.w),
-        child: CustomButton(
-          titleText: "Book Appointment".tr,
-          onTap: () => Get.toNamed(AppRoutes.bookAppointment),
-        ),
+      bottomNavigationBar: const CustomBottomNavBar(
+        currentIndex: 6,
       ),
     );
   }

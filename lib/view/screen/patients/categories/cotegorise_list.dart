@@ -7,6 +7,7 @@ import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 
+import '../../../common_widgets/bottom nav bar/navbar.dart';
 import '../../../common_widgets/text_field/custom_text_field.dart';
 import 'widget/doctor_list_item.dart';
 
@@ -112,6 +113,9 @@ class CategoriseListScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+      bottomNavigationBar: const CustomBottomNavBar(
+        currentIndex: 6,
       ),
     );
   }

@@ -5,6 +5,7 @@ import 'package:wyndok/controllers/patients/Book_appointment_controller.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 
 import '../../../../core/app_routes.dart';
+import '../../../common_widgets/bottom nav bar/navbar.dart';
 import '../../../common_widgets/button/custom_button.dart';
 import 'widget/booking_all_filed.dart';
 
@@ -38,20 +39,24 @@ class BookingAppointmentScreen extends StatelessWidget {
                     fontSize: 20.sp,
                     bottom: 12.h,
                   ),
-                  const BookingAllFiled()
+                  const BookingAllFiled(),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  CustomButton(
+                      titleText: "Next".tr,
+                      onTap: () {
+                        if (formKey.currentState!.validate()) {
+                          Get.toNamed(AppRoutes.bookAppointment);
+                        }
+                        Get.toNamed(AppRoutes.selectDataTime);
+                      }),
                 ],
               ),
             ),
           ),
-          bottomNavigationBar: Padding(
-            padding: EdgeInsets.only(bottom: 24.h, right: 20.w, left: 20.w),
-            child: CustomButton(
-                titleText: "Next".tr,
-                onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    Get.toNamed(AppRoutes.bookAppointment);
-                  }
-                }),
+          bottomNavigationBar: const CustomBottomNavBar(
+            currentIndex: 6,
           ),
         );
       },
