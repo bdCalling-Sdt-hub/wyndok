@@ -96,7 +96,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       }
     } else if (index == 3) {
       if (!(widget.currentIndex == 3)) {
-        Get.toNamed(AppRoutes.patientsHome);
+        Get.toNamed(AppRoutes.chat);
       }
     } else if (index == 4) {
       if (!(widget.currentIndex == 4)) {

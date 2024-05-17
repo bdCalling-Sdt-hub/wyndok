@@ -9,11 +9,11 @@ class MessageController extends GetxController {
 
   List messages = [
     ChatMessageModel(
-        image: AppImages.profile, text: "hello", isMe: false, time: "9:30"),
+        image: AppImages.doctorSarah, text: "hello", isMe: false, time: "9:30"),
     ChatMessageModel(
         image: AppImages.profile, text: "hello", isMe: true, time: "9:30"),
     ChatMessageModel(
-        image: AppImages.profile, text: "hello", isMe: false, time: "9:30")
+        image: AppImages.doctorSarah, text: "hello", isMe: false, time: "9:30")
   ];
 
   ScrollController scrollController = ScrollController();

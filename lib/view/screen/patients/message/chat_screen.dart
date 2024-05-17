@@ -6,6 +6,7 @@ import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/appbar_icon/appbar.dart';
 import 'package:wyndok/view/screen/patients/message/widget/chat_list_item.dart';
 
+import '../../../common_widgets/bottom nav bar/navbar.dart';
 import '../../../common_widgets/text/custom_text.dart';
 
 class ChatListScreen extends StatelessWidget {
@@ -14,28 +15,32 @@ class ChatListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            centerTitle: true,
-            title: CustomText(
-              text: "Messages".tr,
-              fontWeight: FontWeight.w600,
-              fontSize: 24.sp,
-            )),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-          child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () => Get.toNamed(AppRoutes.message),
-                child: ChatListItem(
-                  image: AppImages.doctorSarah,
-                  name: "Favour Nwaeze",
-                  message: "Hello Ken, Hope you are doing great",
-                ),
-              );
-            },
-          ),
-        ));
+      appBar: AppBar(
+          centerTitle: true,
+          title: CustomText(
+            text: "Messages".tr,
+            fontWeight: FontWeight.w600,
+            fontSize: 24.sp,
+          )),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+        child: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () => Get.toNamed(AppRoutes.message),
+              child: ChatListItem(
+                image: AppImages.doctorSarah,
+                name: "Favour Nwaeze",
+                message: "Hello Ken, Hope you are doing great",
+              ),
+            );
+          },
+        ),
+      ),
+      bottomNavigationBar: const CustomBottomNavBar(
+        currentIndex: 3,
+      ),
+    );
   }
 }
