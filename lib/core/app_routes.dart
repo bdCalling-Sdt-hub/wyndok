@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:wyndok/view/screen/no_role/onboarding_screen/onboarding_screen.dart';
+import 'package:wyndok/view/screen/patients/review/send_review.dart';
 
 import '../view/screen/no_role/auth/forgot password/create_password.dart';
 import '../view/screen/no_role/auth/forgot password/forgot_password.dart';
@@ -13,6 +14,7 @@ import '../view/screen/patients/Booking/my_booking_screen.dart';
 import '../view/screen/patients/Booking/select_data_time.dart';
 import '../view/screen/patients/categories/cotegorise_list.dart';
 import '../view/screen/patients/doctor/doctor_details_screen.dart';
+import '../view/screen/patients/favorite/favorite_screen.dart';
 import '../view/screen/patients/home/patients_home.dart';
 import '../view/screen/patients/message/chat_screen.dart';
 import '../view/screen/patients/message/message_screen.dart';
@@ -36,6 +38,8 @@ class AppRoutes {
   static const String myBooking = "/my_booking_screen.dart";
   static const String chat = "/chat_screen.dart";
   static const String message = "/message_screen.dart";
+  static const String sendReview = "/send_review.dart";
+  static const String favorite = "/favorite_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -55,5 +59,7 @@ class AppRoutes {
     GetPage(name: myBooking, page: () => MyBookingScreen()),
     GetPage(name: chat, page: () => ChatListScreen()),
     GetPage(name: message, page: () => MessageScreen()),
+    GetPage(name: sendReview, page: () => SendReview()),
+    GetPage(name: favorite, page: () => FavoriteScreen()),
   ];
 }

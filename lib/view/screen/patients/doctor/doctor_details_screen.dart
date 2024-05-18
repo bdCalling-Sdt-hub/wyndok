@@ -201,7 +201,7 @@ class DoctorDetailsScreen extends StatelessWidget {
               height: 16.h,
             ),
             SizedBox(
-              height: 135.h,
+              height: 140.h,
               child: ListView.builder(
                 itemCount: 6,
                 scrollDirection: Axis.horizontal,
