@@ -93,6 +93,11 @@ class LocalConstants extends Translations {
           "Start date": "Start date",
           "End date": "End date",
           "Notification": "Notification",
+          "Profile": "Profile",
+          "Edit Profile": "Edit Profile",
+          "Health Records": "Health Records",
+          "Settings": "Settings",
+          "Log Out": "Log Out",
         },
       };
 }

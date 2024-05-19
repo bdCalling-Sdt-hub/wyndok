@@ -9,6 +9,7 @@ import '../controllers/patients/Booking/lab_booking_controller.dart';
 import '../controllers/patients/message_controller.dart';
 import '../controllers/patients/Booking/my_booking_controller.dart';
 import '../controllers/patients/notifications_controller.dart';
+import '../controllers/patients/profile_controller.dart';
 import '../controllers/patients/send_review_controller.dart';
 
 class DependencyInjection extends Bindings {
@@ -24,5 +25,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => HomeCareController(), fenix: true);
     Get.lazyPut(() => AmbulanceBookingController(), fenix: true);
     Get.lazyPut(() => NotificationsController(), fenix: true);
+    Get.lazyPut(() => ProfileController(), fenix: true);
   }
 }

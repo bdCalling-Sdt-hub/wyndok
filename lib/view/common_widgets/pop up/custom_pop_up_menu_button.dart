@@ -12,6 +12,7 @@ class PopUpMenu extends StatelessWidget {
     required this.items,
     required this.selectedItem,
     required this.onTap,
+    this.height = 30,
     this.selectedColor = AppColors.primaryColor,
     this.unselectedColor = Colors.transparent,
     this.style,
@@ -21,58 +22,66 @@ class PopUpMenu extends StatelessWidget {
   final String selectedItem;
   final Color selectedColor;
   final Color unselectedColor;
+  final double height;
   final Function(int index) onTap;
   TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
-    return PopupMenuButton<String>(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-            side: BorderSide(color: selectedColor)),
-        offset: const Offset(1, 1),
-        itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              PopupMenuItem<String>(
-                value: 'option1',
-                child: Column(
-                  children: List.generate(
-                    items.length,
-                    (index) => GestureDetector(
-                      onTap: () => onTap(index),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                border: Border.all(color: selectedColor),
-                                color: selectedItem == items[index].toString()
-                                    ? selectedColor
-                                    : unselectedColor,
-                                shape: BoxShape.circle,
+    return SizedBox(
+      height: height,
+      child: PopupMenuButton<String>(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: BorderSide(color: selectedColor)),
+          offset: const Offset(1, 1),
+          padding: EdgeInsets.zero,
+          itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                PopupMenuItem<String>(
+                  value: 'option1',
+                  child: Column(
+                    children: List.generate(
+                      items.length,
+                      (index) => GestureDetector(
+                        onTap: () => onTap(index),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: selectedColor),
+                                  color: selectedItem == items[index].toString()
+                                      ? selectedColor
+                                      : unselectedColor,
+                                  shape: BoxShape.circle,
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 8.w,
-                            ),
-                            Text(
-                              items[index].toString(),
-                              style: style,
-                            ),
-                          ],
+                              SizedBox(
+                                width: 8.w,
+                              ),
+                              Text(
+                                items[index].toString(),
+                                style: style,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
-        icon: const Icon(
-          Icons.keyboard_arrow_down_outlined,
-          color: Colors.black,
-          size: 32,
-        ));
+              ],
+          icon: Padding(
+            padding: EdgeInsets.only(left: 40.w),
+            child: Icon(
+              Icons.keyboard_arrow_down_outlined,
+              color: Colors.black,
+              size: height,
+            ),
+          )),
+    );
   }
 }
 

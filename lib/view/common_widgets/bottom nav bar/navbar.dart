@@ -100,7 +100,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       }
     } else if (index == 4) {
       if (!(widget.currentIndex == 4)) {
-        Get.toNamed(AppRoutes.patientsHome);
+        Get.toNamed(AppRoutes.patientsProfile);
       }
     }
   }
