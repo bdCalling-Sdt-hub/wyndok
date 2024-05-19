@@ -98,6 +98,7 @@ class LocalConstants extends Translations {
           "Health Records": "Health Records",
           "Settings": "Settings",
           "Log Out": "Log Out",
+          "Contact": "Contact",
         },
       };
 }

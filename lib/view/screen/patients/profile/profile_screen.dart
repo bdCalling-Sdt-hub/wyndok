@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wyndok/controllers/patients/profile_controller.dart';
+import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/image/custom_image.dart';
 import 'package:wyndok/view/common_widgets/pop%20up/custom_pop_up_menu_button.dart';
@@ -55,7 +56,11 @@ class ProfileScreen extends StatelessWidget {
                   top: 20.h,
                   bottom: 60.h,
                 ),
-                ProfileItem(icon: Icons.person, title: "Edit Profile".tr),
+                ProfileItem(
+                  icon: Icons.person,
+                  title: "Edit Profile".tr,
+                  onTap: () => Get.toNamed(AppRoutes.editProfile),
+                ),
                 ProfileItem(
                     icon: Icons.notifications_none, title: "Health Records".tr),
                 ProfileItem(icon: Icons.settings, title: "My Booking".tr),

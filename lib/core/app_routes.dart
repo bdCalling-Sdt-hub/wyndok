@@ -3,6 +3,7 @@ import 'package:wyndok/view/screen/no_role/onboarding_screen/onboarding_screen.d
 import 'package:wyndok/view/screen/patients/Booking/ambulance_booking_screen.dart';
 import 'package:wyndok/view/screen/patients/Booking/lab_book.dart';
 import 'package:wyndok/view/screen/patients/notifications/notifications_screen.dart';
+import 'package:wyndok/view/screen/patients/profile/edit_profile.dart';
 import 'package:wyndok/view/screen/patients/profile/profile_screen.dart';
 import 'package:wyndok/view/screen/patients/review/send_review.dart';
 
@@ -54,6 +55,7 @@ class AppRoutes {
   static const String ambulanceBooking = "/ambulance_booking_screen.dart";
   static const String notifications = "/notifications_screen.dart";
   static const String patientsProfile = "/profile_screen.dart";
+  static const String editProfile = "/edit_profile.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -82,5 +84,6 @@ class AppRoutes {
     GetPage(name: ambulanceBooking, page: () => AmbulanceBookIngScreen()),
     GetPage(name: notifications, page: () => NotificationScreen()),
     GetPage(name: patientsProfile, page: () => ProfileScreen()),
+    GetPage(name: editProfile, page: () => EditProfile()),
   ];
 }
