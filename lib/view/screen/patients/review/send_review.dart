@@ -3,7 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:linear_progress_bar/linear_progress_bar.dart';
-import 'package:wyndok/controllers/send_review_controller.dart';
+import 'package:wyndok/controllers/patients/send_review_controller.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 import 'package:wyndok/view/common_widgets/text_field/custom_text_field.dart';

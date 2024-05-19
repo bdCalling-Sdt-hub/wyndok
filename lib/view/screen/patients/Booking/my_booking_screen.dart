@@ -8,7 +8,7 @@ import 'package:wyndok/view/common_widgets/doctor/doctor_book_item.dart';
 
 import '../../../../utils/app_colors.dart';
 import '../../../common_widgets/text/custom_text.dart';
-import 'widget/booking_list.dart';
+
 
 class MyBookingScreen extends StatefulWidget {
   const MyBookingScreen({super.key});

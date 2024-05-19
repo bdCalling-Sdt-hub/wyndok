@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
+import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_images.dart';
 
 class HomeControllerPatients extends GetxController {
   List services = [
-    {"name": "Laboratory".tr, "image": AppImages.laboratory},
-    {"name": "Ambulance".tr, "image": AppImages.ambulance},
-    {"name": "Home Care".tr, "image": AppImages.homeCare},
+    {"name": "Laboratory".tr, "image": AppImages.laboratory, "screen" : AppRoutes.labBooking},
+    {"name": "Ambulance".tr, "image": AppImages.ambulance, "screen" : AppRoutes.labBooking},
+    {"name": "Home Care".tr, "image": AppImages.homeCare, "screen" : AppRoutes.homeCare},
   ];
 
   List categories = [

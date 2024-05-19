@@ -88,6 +88,10 @@ class LocalConstants extends Translations {
               "Please share your opinion about the product",
           "Your review": "Your review",
           "Send Review": "Send Review",
+          "Book": "Book",
+          "Booking Date": "Booking Date",
+          "Start date": "Start date",
+          "End date": "End date",
         },
       };
 }

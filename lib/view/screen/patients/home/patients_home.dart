@@ -114,24 +114,28 @@ class PatientsHomeScreen extends StatelessWidget {
                                     crossAxisCount: 3, crossAxisSpacing: 38.sp),
                             itemBuilder: (context, index) {
                               var item = controller.services[index];
-                              return Container(
-                                height: 90.sp,
-                                width: 90.sp,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: AppColors.blueLightActive,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10.r)),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    CustomImage(
-                                      imageSrc: item["image"],
-                                      imageType: ImageType.png,
-                                      height: 52.sp,
-                                    ),
-                                    CustomText(text: item["name"])
-                                  ],
+                              return GestureDetector(
+                                onTap: () => Get.toNamed(item["screen"]),
+                                child: Container(
+                                  height: 90.sp,
+                                  width: 90.sp,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                        color: AppColors.blueLightActive,
+                                      ),
+                                      borderRadius:
+                                          BorderRadius.circular(10.r)),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      CustomImage(
+                                        imageSrc: item["image"],
+                                        imageType: ImageType.png,
+                                        height: 52.sp,
+                                      ),
+                                      CustomText(text: item["name"])
+                                    ],
+                                  ),
                                 ),
                               );
                             },

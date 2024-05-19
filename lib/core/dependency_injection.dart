@@ -2,10 +2,12 @@ import 'package:get/get.dart';
 
 import '../controllers/auth/sign_up_controller.dart';
 import '../controllers/patients/Book_appointment_controller.dart';
+import '../controllers/patients/home_care_controller.dart';
 import '../controllers/patients/home_controller.dart';
+import '../controllers/patients/lab_booking_controller.dart';
 import '../controllers/patients/message_controller.dart';
 import '../controllers/patients/my_booking_controller.dart';
-import '../controllers/send_review_controller.dart';
+import '../controllers/patients/send_review_controller.dart';
 
 class DependencyInjection extends Bindings {
   @override
@@ -16,5 +18,7 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => MyBookingController(), fenix: true);
     Get.lazyPut(() => MessageController(), fenix: true);
     Get.lazyPut(() => SendReviewController(), fenix: true);
+    Get.lazyPut(() => LabBookingController(), fenix: true);
+    Get.lazyPut(() => HomeCareController(), fenix: true);
   }
 }
