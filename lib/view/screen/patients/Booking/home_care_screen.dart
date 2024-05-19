@@ -8,8 +8,8 @@ import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 import 'package:wyndok/view/screen/patients/Booking/widget/book_list_item.dart';
 
-import '../../../../controllers/patients/home_care_controller.dart';
-import '../../../../controllers/patients/lab_booking_controller.dart';
+import '../../../../controllers/patients/Booking/home_care_controller.dart';
+import '../../../../controllers/patients/Booking/lab_booking_controller.dart';
 import '../../../common_widgets/bottom nav bar/navbar.dart';
 import '../../../common_widgets/text_field/custom_text_field.dart';
 

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:wyndok/controllers/patients/Book_appointment_controller.dart';
+import 'package:wyndok/controllers/patients/Booking/Book_appointment_controller.dart';
 import 'package:wyndok/helpers/other_helper.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/view/common_widgets/pop%20up/custom_pop_up_menu_button.dart';

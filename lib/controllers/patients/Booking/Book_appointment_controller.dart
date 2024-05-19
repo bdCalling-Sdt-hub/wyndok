@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../helpers/other_helper.dart';
+import '../../../helpers/other_helper.dart';
 import 'package:intl/intl.dart';
 
 class BookAppointmentController extends GetxController {

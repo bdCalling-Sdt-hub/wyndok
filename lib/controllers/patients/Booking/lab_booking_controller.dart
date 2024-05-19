@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wyndok/core/app_routes.dart';
 
-import '../../helpers/other_helper.dart';
+import '../../../helpers/other_helper.dart';
 import 'package:intl/intl.dart';
 
 class LabBookingController extends GetxController {

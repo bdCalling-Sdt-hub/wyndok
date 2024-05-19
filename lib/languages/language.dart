@@ -92,6 +92,7 @@ class LocalConstants extends Translations {
           "Booking Date": "Booking Date",
           "Start date": "Start date",
           "End date": "End date",
+          "Notification": "Notification",
         },
       };
 }

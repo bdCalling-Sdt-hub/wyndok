@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:wyndok/controllers/patients/Book_appointment_controller.dart';
+import 'package:wyndok/controllers/patients/Booking/Book_appointment_controller.dart';
 import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 
-import '../../../../controllers/patients/lab_booking_controller.dart';
+import '../../../../controllers/patients/Booking/lab_booking_controller.dart';
 import '../../../common_widgets/pop up/success_pop_up.dart';
 import '../../../common_widgets/text/custom_text.dart';
 

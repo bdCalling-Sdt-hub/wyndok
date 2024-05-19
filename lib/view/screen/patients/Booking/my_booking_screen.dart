@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:wyndok/controllers/patients/my_booking_controller.dart';
+import 'package:wyndok/controllers/patients/Booking/my_booking_controller.dart';
 import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/doctor/doctor_book_item.dart';

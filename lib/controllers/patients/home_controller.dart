@@ -5,7 +5,7 @@ import 'package:wyndok/utils/app_images.dart';
 class HomeControllerPatients extends GetxController {
   List services = [
     {"name": "Laboratory".tr, "image": AppImages.laboratory, "screen" : AppRoutes.labBooking},
-    {"name": "Ambulance".tr, "image": AppImages.ambulance, "screen" : AppRoutes.labBooking},
+    {"name": "Ambulance".tr, "image": AppImages.ambulance, "screen" : AppRoutes.ambulanceBooking},
     {"name": "Home Care".tr, "image": AppImages.homeCare, "screen" : AppRoutes.homeCare},
   ];
 
