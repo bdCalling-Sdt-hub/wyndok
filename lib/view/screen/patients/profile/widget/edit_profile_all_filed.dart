@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:wyndok/controllers/patients/Booking/Book_appointment_controller.dart';
 import 'package:wyndok/helpers/other_helper.dart';
 import 'package:wyndok/utils/app_colors.dart';
@@ -22,9 +23,16 @@ class EditProfileAllFiled extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            CustomText(
+              text: "Full Name".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
+            ),
             CustomTextField(
               controller: controller.nameController,
               validator: OtherHelper.validator,
+              hindText: "Full Name".tr,
               prefixIcon: const Icon(Icons.person),
               fieldBorderRadius: 10.r,
               keyboardType: TextInputType.none,
@@ -36,13 +44,22 @@ class EditProfileAllFiled extends StatelessWidget {
               top: 20.h,
               bottom: 12.h,
             ),
-            CustomTextField(
-              controller: controller.nameController,
-              validator: OtherHelper.validator,
-              prefixIcon: const Icon(Icons.person),
-              keyboardType: TextInputType.name,
-              fieldBorderRadius: 10.r,
-              hindText: "Enter Name".tr,
+            IntlPhoneField(
+              controller: controller.numberController,
+              onChanged: (value) {
+                print(value);
+              },
+              decoration: InputDecoration(
+                hintText: "Phone Number".tr,
+                fillColor: AppColors.textFiledColor,
+                filled: true,
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 4.w, vertical: 14.h),
+                border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(8))),
+              ),
+              initialCountryCode: "BD",
+              disableLengthCheck: false,
             ),
             SizedBox(
               height: 20.h,
@@ -195,22 +212,6 @@ class EditProfileAllFiled extends StatelessWidget {
                 )),
               ],
             ),
-            SizedBox(
-              height: 20.h,
-            ),
-            CustomText(
-              text: "Added additional details(if you want)".tr,
-              fontWeight: FontWeight.w700,
-              fontSize: 20.sp,
-              top: 20.sp,
-              bottom: 12.h,
-            ),
-            CustomTextField(
-              controller: controller.descriptionController,
-              fieldBorderRadius: 10.r,
-              maxLines: null,
-              hindText: "Write here".tr,
-            )
           ],
         );
       },

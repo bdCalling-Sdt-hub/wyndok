@@ -49,11 +49,6 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
             ),
             IntlPhoneField(
               controller: controller.numberController,
-              // validator: (value) {
-              //   if (value!.number.isEmpty) {
-              //     return "Invalid Mobile Number".tr;
-              //   }
-              // },
               onChanged: (value) {
                 print(value);
               },

@@ -99,6 +99,24 @@ class LocalConstants extends Translations {
           "Settings": "Settings",
           "Log Out": "Log Out",
           "Contact": "Contact",
+          "Save Changes": "Save Changes",
+          "Upload your previous prescription or medical test report":
+              "Upload your previous prescription or \n medical test report",
+          "Save": "Save",
+          "Laboratory Test Booking": "Laboratory Test Booking",
+          "Doctor Booking": "Doctor Booking",
+          "Home Care Booking": "Home Care Booking",
+          "Change Password": "Change Password",
+          "Delete account": "Delete account",
+          "Are you sure": "Are you sure?",
+          "All your changes will be deleted and you will no longer be able to access them.":
+              "All your changes will be deleted and you will no longer be able to access them.",
+          "Done": "Done",
+          "Current Password": "Current  Password",
+          "New Password": "New  Password",
+          "Password must be 8 characters & contain both \nalphabets and numerics":
+              "Password must be 8 characters & contain both \nalphabets and numerics",
+          "Confirm": "Confirm"
         },
       };
 }

@@ -34,23 +34,16 @@ class EditProfile extends StatelessWidget {
               key: formKey,
               child: Column(
                 children: [
-                  CustomText(
-                    text: "Patients Relation with principle patient".tr,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 20.sp,
-                    bottom: 12.h,
-                  ),
                   const EditProfileAllFiled(),
                   SizedBox(
                     height: 20.h,
                   ),
                   CustomButton(
-                      titleText: "Next".tr,
+                      titleText: "Save Changes".tr,
                       onTap: () {
                         if (formKey.currentState!.validate()) {
-                          Get.toNamed(AppRoutes.bookAppointment);
+                          Get.toNamed(AppRoutes.patientsProfile);
                         }
-                        Get.toNamed(AppRoutes.selectDataTime);
                       }),
                 ],
               ),

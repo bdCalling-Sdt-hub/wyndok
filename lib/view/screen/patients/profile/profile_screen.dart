@@ -6,7 +6,7 @@ import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/image/custom_image.dart';
 import 'package:wyndok/view/common_widgets/pop%20up/custom_pop_up_menu_button.dart';
-import 'package:wyndok/view/screen/patients/profile/widget/profile_item.dart';
+import 'package:wyndok/view/common_widgets/item.dart';
 
 import '../../../../utils/app_colors.dart';
 import '../../../common_widgets/bottom nav bar/navbar.dart';
@@ -56,15 +56,26 @@ class ProfileScreen extends StatelessWidget {
                   top: 20.h,
                   bottom: 60.h,
                 ),
-                ProfileItem(
+                Item(
                   icon: Icons.person,
                   title: "Edit Profile".tr,
                   onTap: () => Get.toNamed(AppRoutes.editProfile),
                 ),
-                ProfileItem(
-                    icon: Icons.notifications_none, title: "Health Records".tr),
-                ProfileItem(icon: Icons.settings, title: "My Booking".tr),
-                ProfileItem(icon: Icons.settings, title: "Settings".tr),
+                Item(
+                  icon: Icons.notifications_none,
+                  title: "Health Records".tr,
+                  onTap: () => Get.toNamed(AppRoutes.healthRecords),
+                ),
+                Item(
+                  icon: Icons.settings,
+                  title: "My Booking".tr,
+                  onTap: () => Get.toNamed(AppRoutes.bookingList),
+                ),
+                Item(
+                  icon: Icons.settings,
+                  title: "Settings".tr,
+                  onTap: () => Get.toNamed(AppRoutes.setting),
+                ),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 24.w),
                   child: Column(
@@ -90,7 +101,7 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                ProfileItem(icon: Icons.logout, title: "Log Out".tr),
+                Item(icon: Icons.logout, title: "Log Out".tr),
               ],
             ),
           );

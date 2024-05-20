@@ -8,4 +8,8 @@ class AppIcons {
   static const String chat = "$baseurl/chat.svg";
   static const String file = "$baseurl/file.svg";
   static const String send = "$baseurl/send.svg";
+  static const String stethoscope = "$baseurl/stethoscope.svg";
+  static const String lab = "$baseurl/lab.svg";
+  static const String homeCare = "$baseurl/home_care.svg";
+  static const String ambulance = "$baseurl/ambulance.svg";
 }

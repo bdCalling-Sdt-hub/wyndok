@@ -13,6 +13,8 @@ class AppColors {
   static const Color white = Colors.white;
   static const Color textFiledColor = Color(0xFFF9F9F9);
   static const Color greyscale = Color(0xFFE0E0E0);
+  static const Color greyscale500 = Color(0xFF9E9E9E);
+  static const Color greyscale100 = Color(0xFFF5F5F5);
   static const Color greyscale700 = Color(0xFF616161);
   static const Color greyscale200 = Color(0xFFEEEEEE);
   static const Color transparent = Colors.transparent;

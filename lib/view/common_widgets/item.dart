@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wyndok/utils/app_colors.dart';
+import 'package:wyndok/view/common_widgets/image/custom_image.dart';
 import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 
-class ProfileItem extends StatelessWidget {
-  ProfileItem({
+class Item extends StatelessWidget {
+  const Item({
     super.key,
-    required this.icon,
+    this.icon,
     required this.title,
+    this.image = "",
     this.disableDivider = false,
     this.onTap,
   });
 
-  final IconData icon;
+  final IconData? icon;
   final String title;
+  final String image;
   final bool disableDivider;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
+        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
         child: Column(
           children: [
             Row(
               children: [
-                Icon(icon),
+                icon != null ? Icon(icon) : CustomImage(imageSrc: image),
                 CustomText(
                   text: title,
                   color: AppColors.greyscale700,

@@ -1,11 +1,15 @@
 import 'package:get/get.dart';
+import 'package:wyndok/view/screen/no_role/auth/change_password/change_password_screen.dart';
 import 'package:wyndok/view/screen/no_role/onboarding_screen/onboarding_screen.dart';
 import 'package:wyndok/view/screen/patients/Booking/ambulance_booking_screen.dart';
+import 'package:wyndok/view/screen/patients/Booking/booking_list.dart';
 import 'package:wyndok/view/screen/patients/Booking/lab_book.dart';
+import 'package:wyndok/view/screen/patients/health/health_records.dart';
 import 'package:wyndok/view/screen/patients/notifications/notifications_screen.dart';
 import 'package:wyndok/view/screen/patients/profile/edit_profile.dart';
 import 'package:wyndok/view/screen/patients/profile/profile_screen.dart';
 import 'package:wyndok/view/screen/patients/review/send_review.dart';
+import 'package:wyndok/view/screen/patients/setting/setting_screen.dart';
 
 import '../view/screen/no_role/auth/forgot password/create_password.dart';
 import '../view/screen/no_role/auth/forgot password/forgot_password.dart';
@@ -56,6 +60,10 @@ class AppRoutes {
   static const String notifications = "/notifications_screen.dart";
   static const String patientsProfile = "/profile_screen.dart";
   static const String editProfile = "/edit_profile.dart";
+  static const String healthRecords = "/health_records.dart";
+  static const String bookingList = "/booking_list.dart";
+  static const String setting = "/setting_screen.dart";
+  static const String changePassword = "/change_password_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -85,5 +93,9 @@ class AppRoutes {
     GetPage(name: notifications, page: () => NotificationScreen()),
     GetPage(name: patientsProfile, page: () => ProfileScreen()),
     GetPage(name: editProfile, page: () => EditProfile()),
+    GetPage(name: healthRecords, page: () => HealthRecords()),
+    GetPage(name: bookingList, page: () => BookingListScreen()),
+    GetPage(name: setting, page: () => SettingScreen()),
+    GetPage(name: changePassword, page: () => ChangePasswordScreen()),
   ];
 }
