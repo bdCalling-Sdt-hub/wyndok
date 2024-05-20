@@ -116,7 +116,12 @@ class LocalConstants extends Translations {
           "New Password": "New  Password",
           "Password must be 8 characters & contain both \nalphabets and numerics":
               "Password must be 8 characters & contain both \nalphabets and numerics",
-          "Confirm": "Confirm"
+          "Confirm": "Confirm",
+          "Location": "Location",
+          "please, location permission enabled":
+              "please, location permission enabled",
+          "Doctor Find": "Doctor Find",
+          "Choose your nearby doctor": "Choose your nearby doctor",
         },
       };
 }

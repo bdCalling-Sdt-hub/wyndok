@@ -57,8 +57,12 @@ class _CustomImageState extends State<CustomImage> {
         height: widget.height,
         width: widget.width,
         fit: widget.fill,
-        errorBuilder: (context, error, stackTrace) =>
-            Image.asset(widget.defaultImage),
+        errorBuilder: (context, error, stackTrace) {
+          if (kDebugMode) {
+            print("imageError : $error");
+          }
+          return Image.asset(widget.defaultImage);
+        },
       );
     }
 
@@ -70,7 +74,9 @@ class _CustomImageState extends State<CustomImage> {
         width: widget.width,
         fit: widget.fill,
         errorBuilder: (context, error, stackTrace) {
-          print(widget.imageSrc);
+          if (kDebugMode) {
+            print(widget.imageSrc);
+          }
           return Image.asset(widget.defaultImage);
         },
         loadingBuilder: (BuildContext context, Widget child,

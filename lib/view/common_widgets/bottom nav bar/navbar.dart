@@ -92,7 +92,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       }
     } else if (index == 2) {
       if (!(widget.currentIndex == 2)) {
-        Get.toNamed(AppRoutes.patientsHome);
+        Get.toNamed(AppRoutes.googleMap);
       }
     } else if (index == 3) {
       if (!(widget.currentIndex == 3)) {

@@ -23,6 +23,8 @@ class AppImages {
   static const String profile = "$baseurl/profile.png" ;
   static const String pulmono = "$baseurl/Pulmono.png" ;
   static const String vaccinat = "$baseurl/Vaccinat.png" ;
+  static const String marker = "$baseurl/marker.png" ;
+  static const String alan = "$baseurl/img.png" ;
 
 
 

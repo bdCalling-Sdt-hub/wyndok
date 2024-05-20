@@ -12,4 +12,5 @@ class AppIcons {
   static const String lab = "$baseurl/lab.svg";
   static const String homeCare = "$baseurl/home_care.svg";
   static const String ambulance = "$baseurl/ambulance.svg";
+  static const String marker = "$baseurl/marker.svg";
 }

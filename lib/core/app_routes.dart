@@ -5,6 +5,7 @@ import 'package:wyndok/view/screen/patients/Booking/ambulance_booking_screen.dar
 import 'package:wyndok/view/screen/patients/Booking/booking_list.dart';
 import 'package:wyndok/view/screen/patients/Booking/lab_book.dart';
 import 'package:wyndok/view/screen/patients/health/health_records.dart';
+import 'package:wyndok/view/screen/patients/map/google_map_screen.dart';
 import 'package:wyndok/view/screen/patients/notifications/notifications_screen.dart';
 import 'package:wyndok/view/screen/patients/profile/edit_profile.dart';
 import 'package:wyndok/view/screen/patients/profile/profile_screen.dart';
@@ -64,6 +65,7 @@ class AppRoutes {
   static const String bookingList = "/booking_list.dart";
   static const String setting = "/setting_screen.dart";
   static const String changePassword = "/change_password_screen.dart";
+  static const String googleMap = "/google_map_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -97,5 +99,6 @@ class AppRoutes {
     GetPage(name: bookingList, page: () => BookingListScreen()),
     GetPage(name: setting, page: () => SettingScreen()),
     GetPage(name: changePassword, page: () => ChangePasswordScreen()),
+    GetPage(name: googleMap, page: () => GoogleMapScreen()),
   ];
 }

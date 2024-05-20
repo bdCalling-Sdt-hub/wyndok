@@ -4,6 +4,7 @@ import '../controllers/auth/sign_up_controller.dart';
 import '../controllers/patients/Booking/Book_appointment_controller.dart';
 import '../controllers/patients/Booking/ambulance_booking_controller.dart';
 import '../controllers/patients/Booking/home_care_controller.dart';
+import '../controllers/patients/google_map_controller.dart';
 import '../controllers/patients/health_rocords_controller.dart';
 import '../controllers/patients/home_controller.dart';
 import '../controllers/patients/Booking/lab_booking_controller.dart';
@@ -30,5 +31,6 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => ProfileController(), fenix: true);
     Get.lazyPut(() => HealthRecordController(), fenix: true);
     Get.lazyPut(() => SettingController(), fenix: true);
+    Get.lazyPut(() => GoogleMapController(), fenix: true);
   }
 }
