@@ -68,7 +68,7 @@ class SelectHomeCareDataTime extends StatelessWidget {
                                 validator: OtherHelper.validator,
                                 suffixIcon: const Icon(Icons.date_range),
                                 textStyle: const TextStyle(height: 2.7),
-                                onTap: () => OtherHelper.dateOfBirthPicker(
+                                onTap: () => OtherHelper.datePicker(
                                     controller.startController),
                               ),
                             ),
@@ -106,7 +106,7 @@ class SelectHomeCareDataTime extends StatelessWidget {
                                 validator: OtherHelper.validator,
                                 suffixIcon: const Icon(Icons.date_range),
                                 textStyle: TextStyle(height: 2.7),
-                                onTap: () => OtherHelper.dateOfBirthPicker(
+                                onTap: () => OtherHelper.datePicker(
                                     controller.endController),
                               ),
                             ),

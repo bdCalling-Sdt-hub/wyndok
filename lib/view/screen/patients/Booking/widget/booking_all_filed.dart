@@ -67,7 +67,7 @@ class BookingAllFiled extends StatelessWidget {
                       validator: OtherHelper.validator,
                       keyboardType: TextInputType.none,
                       fieldBorderRadius: 10.r,
-                      onTap: () => OtherHelper.dateOfBirthPicker(
+                      onTap: () => OtherHelper.datePicker(
                           controller.dateOfBirthController),
                       hindText: "Date of birth".tr,
                     ),

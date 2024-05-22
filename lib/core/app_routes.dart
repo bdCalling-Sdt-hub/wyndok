@@ -1,4 +1,10 @@
 import 'package:get/get.dart';
+import 'package:wyndok/view/screen/doctor/info/added_experience_screen.dart';
+import 'package:wyndok/view/screen/doctor/info/availability_screen.dart';
+import 'package:wyndok/view/screen/doctor/info/identification_screen.dart';
+import 'package:wyndok/view/screen/doctor/info/personal_information_screen.dart';
+import 'package:wyndok/view/screen/doctor/info/professional_qualifications_screen.dart';
+import 'package:wyndok/view/screen/doctor/info/review_screen.dart';
 import 'package:wyndok/view/screen/no_role/auth/change_password/change_password_screen.dart';
 import 'package:wyndok/view/screen/no_role/onboarding_screen/onboarding_screen.dart';
 import 'package:wyndok/view/screen/patients/Booking/ambulance_booking_screen.dart';
@@ -66,6 +72,13 @@ class AppRoutes {
   static const String setting = "/setting_screen.dart";
   static const String changePassword = "/change_password_screen.dart";
   static const String googleMap = "/google_map_screen.dart";
+  static const String personalInformation = "/personal_information_screen.dart";
+  static const String professionalQualifications =
+      "/professional_qualifications_screen.dart";
+  static const String addedExperience = "/added_experience_screen.dart";
+  static const String availability = "/availability_screen.dart";
+  static const String identificationScreen = "/identification_screen.dart";
+  static const String reviewScreen = "/review_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -100,5 +113,13 @@ class AppRoutes {
     GetPage(name: setting, page: () => SettingScreen()),
     GetPage(name: changePassword, page: () => ChangePasswordScreen()),
     GetPage(name: googleMap, page: () => GoogleMapScreen()),
+    GetPage(name: personalInformation, page: () => PersonalInformationScreen()),
+    GetPage(
+        name: professionalQualifications,
+        page: () => ProfessionalQualificationsScreen()),
+    GetPage(name: addedExperience, page: () => AddedExperienceScreen()),
+    GetPage(name: availability, page: () => AvailabilityScreen()),
+    GetPage(name: identificationScreen, page: () => IdentificationScreen()),
+    GetPage(name: reviewScreen, page: () => ReviewScreen()),
   ];
 }

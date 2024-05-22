@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:wyndok/controllers/doctor/info/Personal_information_controller.dart';
 import 'package:wyndok/controllers/patients/Booking/Book_appointment_controller.dart';
 import 'package:wyndok/helpers/other_helper.dart';
 import 'package:wyndok/utils/app_colors.dart';
@@ -13,27 +14,65 @@ import 'package:wyndok/view/common_widgets/text_field/custom_text_field.dart';
 
 import '../../../../../controllers/patients/profile_controller.dart';
 
-class EditProfileAllFiled extends StatelessWidget {
-  const EditProfileAllFiled({super.key});
+class PersonalInfoAllFiled extends StatelessWidget {
+  const PersonalInfoAllFiled({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ProfileController>(
+    return GetBuilder<PersonalInformationController>(
       builder: (controller) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomText(
+              text: "Title".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
+            ),
+            CustomTextField(
+              controller: controller.titleController,
+              validator: OtherHelper.validator,
+              hindText: "Title".tr,
+              fieldBorderRadius: 10.r,
+              keyboardType: TextInputType.none,
+              suffixIcon: PopUpMenu(
+                items: controller.titleList,
+                selectedItem: controller.titleController.text,
+                onTap: controller.selectedTitle,
+              ),
+            ),
+            CustomText(
               text: "Full Name".tr,
               fontWeight: FontWeight.w700,
               fontSize: 20.sp,
               bottom: 12.h,
+              top: 20.h,
             ),
             CustomTextField(
               controller: controller.nameController,
               validator: OtherHelper.validator,
               hindText: "Full Name".tr,
               prefixIcon: const Icon(Icons.person),
+              fieldBorderRadius: 10.r,
+              keyboardType: TextInputType.name,
+            ),
+            CustomText(
+              text: "Want to Home Care Service".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
+              top: 20.h,
+            ),
+            CustomTextField(
+              controller: controller.homeServiceController,
+              validator: OtherHelper.validator,
+              hindText: "Want to Home Care Service".tr,
+              suffixIcon: PopUpMenu(
+                items: controller.homeCareService,
+                selectedItem: controller.homeServiceController.text,
+                onTap: controller.selectedHomeService,
+              ),
               fieldBorderRadius: 10.r,
               keyboardType: TextInputType.none,
             ),
@@ -61,55 +100,51 @@ class EditProfileAllFiled extends StatelessWidget {
               initialCountryCode: "BD",
               disableLengthCheck: false,
             ),
-            SizedBox(
-              height: 20.h,
+            CustomText(
+              text: "Date of birth".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
             ),
-            Row(
-              children: [
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Date of birth".tr,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w700,
-                      bottom: 12.h,
-                    ),
-                    CustomTextField(
-                      controller: controller.dateOfBirthController,
-                      validator: OtherHelper.validator,
-                      keyboardType: TextInputType.none,
-                      fieldBorderRadius: 10.r,
-                      onTap: () => OtherHelper.datePicker(
-                          controller.dateOfBirthController),
-                      hindText: "Date of birth".tr,
-                    ),
-                  ],
-                )),
-                SizedBox(
-                  width: 20.sp,
-                ),
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Age".tr,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w700,
-                      bottom: 12.h,
-                    ),
-                    CustomTextField(
-                      controller: controller.nameController,
-                      validator: OtherHelper.validator,
-                      keyboardType: TextInputType.number,
-                      fieldBorderRadius: 10.r,
-                      hindText: "Age".tr,
-                    ),
-                  ],
-                )),
-              ],
+            CustomTextField(
+              controller: controller.dateOfBrithController,
+              validator: OtherHelper.validator,
+              hindText: "Date of birth".tr,
+              suffixIcon: GestureDetector(
+                  onTap: () => OtherHelper.datePicker(
+                      controller.dateOfBrithController),
+                  child: const Icon(Icons.date_range)),
+              onTap: () => OtherHelper.datePicker(
+                  controller.dateOfBrithController),
+              fieldBorderRadius: 10.r,
+              keyboardType: TextInputType.none,
+            ),
+            CustomText(
+              text: "Location".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
+            ),
+            CustomTextField(
+              controller: controller.locationController,
+              validator: OtherHelper.validator,
+              hindText: "Location".tr,
+              suffixIcon: const Icon(Icons.location_on_outlined),
+              fieldBorderRadius: 10.r,
+              keyboardType: TextInputType.text,
+            ),
+            CustomText(
+              text: "Country".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
+            ),
+            CustomTextField(
+              controller: controller.countryController,
+              validator: OtherHelper.validator,
+              hindText: "Country".tr,
+              fieldBorderRadius: 10.r,
+              keyboardType: TextInputType.text,
             ),
             SizedBox(
               height: 20.h,
@@ -148,17 +183,22 @@ class EditProfileAllFiled extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomText(
-                      text: "Blood Group".tr,
+                      text: "Doctor Type".tr,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                       bottom: 12.h,
                     ),
                     CustomTextField(
-                      controller: controller.bloodGroupController,
-                      fieldBorderRadius: 10.r,
+                      controller: controller.doctorTypeController,
                       validator: OtherHelper.validator,
-                      keyboardType: TextInputType.datetime,
-                      hindText: "Blood Group".tr,
+                      keyboardType: TextInputType.none,
+                      fieldBorderRadius: 10.r,
+                      suffixIcon: PopUpMenu(
+                        items: controller.doctorType,
+                        selectedItem: controller.doctorTypeController.text,
+                        onTap: controller.selectedDoctorType,
+                      ),
+                      hindText: "Doctor Type".tr,
                     ),
                   ],
                 )),
@@ -166,51 +206,6 @@ class EditProfileAllFiled extends StatelessWidget {
             ),
             SizedBox(
               height: 20.h,
-            ),
-            Row(
-              children: [
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Height(Feet)".tr,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w700,
-                      bottom: 12.h,
-                    ),
-                    CustomTextField(
-                      controller: controller.heightController,
-                      validator: OtherHelper.validator,
-                      keyboardType: TextInputType.number,
-                      fieldBorderRadius: 10.r,
-                      hindText: "Height(Feet)".tr,
-                    ),
-                  ],
-                )),
-                SizedBox(
-                  width: 20.sp,
-                ),
-                Expanded(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: "Weight(kg)".tr,
-                      fontSize: 20.sp,
-                      fontWeight: FontWeight.w700,
-                      bottom: 12.h,
-                    ),
-                    CustomTextField(
-                      controller: controller.weightController,
-                      validator: OtherHelper.validator,
-                      keyboardType: TextInputType.number,
-                      fieldBorderRadius: 10.r,
-                      hindText: "Weight(kg)".tr,
-                    ),
-                  ],
-                )),
-              ],
             ),
           ],
         );
