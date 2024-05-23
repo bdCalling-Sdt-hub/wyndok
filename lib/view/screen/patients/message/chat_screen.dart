@@ -6,6 +6,8 @@ import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/appbar_icon/appbar.dart';
 import 'package:wyndok/view/screen/patients/message/widget/chat_list_item.dart';
 
+import '../../../../helpers/prefs_helper.dart';
+import '../../../common_widgets/bottom nav bar/doctor_nav_bar.dart';
 import '../../../common_widgets/bottom nav bar/navbar.dart';
 import '../../../common_widgets/text/custom_text.dart';
 
@@ -38,9 +40,9 @@ class ChatListScreen extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(
-        currentIndex: 3,
-      ),
+      bottomNavigationBar: PrefsHelper.userType == "doctor"
+          ? const CustomDoctorBottomNavBar(currentIndex: 2)
+          : const CustomBottomNavBar(currentIndex: 3),
     );
   }
 }

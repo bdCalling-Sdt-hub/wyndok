@@ -5,35 +5,37 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../utils/app_colors.dart';
 
 class CustomTextField extends StatefulWidget {
-  const CustomTextField({
-    this.inputFormatters,
-    this.onFieldSubmitted,
-    this.controller,
-    this.focusNode,
-    this.keyboardType = TextInputType.text,
-    this.textInputAction = TextInputAction.next,
-    this.cursorColor = AppColors.black,
-    this.textAlignVertical = TextAlignVertical.center,
-    this.textAlign = TextAlign.start,
-    this.onChanged,
-    this.maxLines = 1,
-    this.validator,
-    this.labelText,
-    this.hindText,
-    this.textStyle,
-    this.fillColor = AppColors.textFiledColor,
-    this.suffixIcon,
-    this.suffixIconColor,
-    this.fieldBorderRadius,
-    this.fieldBorderColor = const Color(0xffE7F0FD),
-    this.isPassword = false,
-    this.isPrefixIcon = true,
-    this.readOnly = false,
-    this.maxLength,
-    super.key,
-    this.prefixIcon,
-    this.onTap,
-  });
+  const CustomTextField(
+      {this.inputFormatters,
+      this.onFieldSubmitted,
+      this.controller,
+      this.focusNode,
+      this.keyboardType = TextInputType.text,
+      this.textInputAction = TextInputAction.next,
+      this.cursorColor = AppColors.black,
+      this.textAlignVertical = TextAlignVertical.center,
+      this.textAlign = TextAlign.start,
+      this.onChanged,
+      this.maxLines = 1,
+      this.validator,
+      this.labelText,
+      this.hindText,
+      this.textStyle,
+      this.fillColor = AppColors.textFiledColor,
+      this.suffixIcon,
+      this.suffixIconColor,
+      this.fieldBorderRadius,
+      this.fieldBorderColor = const Color(0xffE7F0FD),
+      this.isPassword = false,
+      this.isPrefixIcon = true,
+      this.readOnly = false,
+      this.maxLength,
+      super.key,
+      this.prefixIcon,
+      this.onTap,
+      this.horizontal,
+      this.isEnabled = true,
+      this.vertical});
 
   final TextEditingController? controller;
   final FocusNode? focusNode;
@@ -43,6 +45,7 @@ class CustomTextField extends StatefulWidget {
   final TextAlignVertical? textAlignVertical;
   final TextAlign textAlign;
   final int? maxLines;
+
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
   final FormFieldValidator? validator;
@@ -54,11 +57,14 @@ class CustomTextField extends StatefulWidget {
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final double? fieldBorderRadius;
+  final double? vertical;
+  final double? horizontal;
   final VoidCallback? onTap;
 
   final Color fieldBorderColor;
   final bool isPassword;
   final bool isPrefixIcon;
+  final bool isEnabled;
   final bool readOnly;
   final int? maxLength;
   final List<TextInputFormatter>? inputFormatters;
@@ -88,9 +94,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
       maxLines: widget.maxLines,
       obscureText: widget.isPassword ? obscureText : false,
       validator: widget.validator,
+      enabled: widget.isEnabled,
       showCursor: widget.keyboardType == TextInputType.none ? false : true,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 14.w),
+        contentPadding: EdgeInsets.symmetric(
+            vertical: widget.vertical ?? 16.h,
+            horizontal: widget.horizontal ?? 14.w),
         labelText: widget.labelText,
         hintText: widget.hindText,
         labelStyle: widget.textStyle,

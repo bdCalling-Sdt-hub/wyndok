@@ -11,7 +11,7 @@ class PrefsHelper extends GetxController {
   static String myImage = "";
   static String myName = "";
   static String myEmail = "";
-  static String mySubscription = "shopping";
+  static String userType = "doctor";
   static String localizationLanguageCode = 'en';
   static String localizationCountryCode = 'US';
 
@@ -27,7 +27,7 @@ class PrefsHelper extends GetxController {
     myEmail = preferences.getString("myEmail") ?? "";
     isLogIn = preferences.getBool("isLogIn") ?? false;
     isNotifications = preferences.getBool("isNotifications") ?? true;
-    mySubscription = preferences.getString("mySubscription") ?? "shopping";
+    userType = preferences.getString("userType") ?? "doctor";
     localizationCountryCode = preferences.getString("localizationCountryCode") ?? "US";
     localizationLanguageCode = preferences.getString("localizationLanguageCode") ?? "en";
 
@@ -46,7 +46,7 @@ class PrefsHelper extends GetxController {
     preferences.setString("myEmail", "");
     preferences.setBool("isLogIn", false);
     preferences.setBool("isNotifications", true);
-    preferences.setString("mySubscription", "shopping");
+    preferences.setString("userType", "shopping");
 
     // Get.offAllNamed(AppRoutes.login);
     getAllPrefData();

@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wyndok/controllers/patients/Booking/ambulance_booking_controller.dart';
 import 'package:wyndok/controllers/patients/notifications_controller.dart';
+import 'package:wyndok/helpers/prefs_helper.dart';
 
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/utils/app_images.dart';
+import 'package:wyndok/view/common_widgets/bottom%20nav%20bar/doctor_nav_bar.dart';
 
 import '../../../common_widgets/bottom nav bar/navbar.dart';
 import '../../../common_widgets/text/custom_text.dart';
@@ -44,9 +46,9 @@ class NotificationScreen extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: const CustomBottomNavBar(
-        currentIndex: 1,
-      ),
+      bottomNavigationBar: PrefsHelper.userType == "doctor"
+          ? const CustomDoctorBottomNavBar(currentIndex: 1)
+          : const CustomBottomNavBar(currentIndex: 1),
     );
   }
 }

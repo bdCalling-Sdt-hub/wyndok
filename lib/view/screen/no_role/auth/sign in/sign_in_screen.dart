@@ -53,10 +53,10 @@ class SignInScreen extends StatelessWidget {
             ),
             CustomButton(
               titleText: "Sign in".tr,
-              onTap: () => Get.toNamed(AppRoutes.patientsHome),
+              onTap: () => Get.toNamed(AppRoutes.doctorHome),
             ),
             GestureDetector(
-              onTap: () => Get.toNamed(AppRoutes.forgotPassword),
+              onTap: () => Get.offAllNamed(AppRoutes.forgotPassword),
               child: CustomText(
                 text: "Forgot the password".tr,
                 top: 24.h,

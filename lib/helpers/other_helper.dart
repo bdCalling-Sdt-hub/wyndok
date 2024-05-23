@@ -54,25 +54,23 @@ class OtherHelper {
     }
   }
 
-  static Future<void> datePicker(TextEditingController controller,
-      {DatePickerMode initialDatePickerMode = DatePickerMode.day}) async {
+  static Future<void> datePicker(
+    TextEditingController controller,
+  ) async {
     final DateTime? picked = await showDatePicker(
-        builder: (context, child) => Theme(
-            data: Theme.of(context).copyWith(
-              colorScheme: const ColorScheme.light(
-                primary: AppColors.primaryColor, // <-- SEE HERE
-                onPrimary: AppColors.white, // <-- SEE HERE
-                onSurface: AppColors.blackNormalActive, // <-- SEE HERE
-              ),
+      builder: (context, child) => Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: const ColorScheme.light(
+              primary: AppColors.primaryColor, // <-- SEE HERE
+              onPrimary: AppColors.white, // <-- SEE HERE
+              onSurface: AppColors.blackNormalActive, // <-- SEE HERE
             ),
-            child: child!),
-        context: Get.context!,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(1900),
-        lastDate: DateTime(2101),
-
-        initialDatePickerMode: initialDatePickerMode,
-
+          ),
+          child: child!),
+      context: Get.context!,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime(2101),
     );
     if (picked != null) {
       controller.text = "${picked.year}/${picked.month}/${picked.day}";

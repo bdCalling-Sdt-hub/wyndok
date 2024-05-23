@@ -145,6 +145,14 @@ class LocalConstants extends Translations {
           "In Review": "In Review",
           "Your application is under review": "Your application is under review",
           "We will notify you as soon as your account has been approved": "We will notify you as soon as your account has been approved",
+          "Patients List": "Patients List",
+          "Appointment Request": "Appointment Request",
+          "Patients Details": "Patients Details",
+          "Booking Time": "Booking Time",
+          "Accept": "Accept",
+          "You sure want to cancel appointment": "You sure want to cancel appointment?",
+
+
         },
       };
 }

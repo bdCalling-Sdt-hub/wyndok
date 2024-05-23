@@ -26,6 +26,8 @@ class AppImages {
   static const String marker = "$baseurl/marker.png" ;
   static const String alan = "$baseurl/img.png" ;
   static const String review = "$baseurl/review.png" ;
+  static const String annette = "$baseurl/annette.png" ;
+  static const String records = "$baseurl/records.png" ;
 
 
 

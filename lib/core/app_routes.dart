@@ -5,6 +5,10 @@ import 'package:wyndok/view/screen/doctor/info/identification_screen.dart';
 import 'package:wyndok/view/screen/doctor/info/personal_information_screen.dart';
 import 'package:wyndok/view/screen/doctor/info/professional_qualifications_screen.dart';
 import 'package:wyndok/view/screen/doctor/info/review_screen.dart';
+import 'package:wyndok/view/screen/doctor/patients_details/additional_details_screen.dart';
+import 'package:wyndok/view/screen/doctor/patients_details/patients_details_screen.dart';
+import 'package:wyndok/view/screen/doctor/patients_info/doctor_home_screen.dart';
+import 'package:wyndok/view/screen/doctor/patients_info/patients_list_screen.dart';
 import 'package:wyndok/view/screen/no_role/auth/change_password/change_password_screen.dart';
 import 'package:wyndok/view/screen/no_role/onboarding_screen/onboarding_screen.dart';
 import 'package:wyndok/view/screen/patients/Booking/ambulance_booking_screen.dart';
@@ -18,6 +22,7 @@ import 'package:wyndok/view/screen/patients/profile/profile_screen.dart';
 import 'package:wyndok/view/screen/patients/review/send_review.dart';
 import 'package:wyndok/view/screen/patients/setting/setting_screen.dart';
 
+import '../view/screen/doctor/patients_info/appointment_list_screen.dart';
 import '../view/screen/no_role/auth/forgot password/create_password.dart';
 import '../view/screen/no_role/auth/forgot password/forgot_password.dart';
 import '../view/screen/no_role/auth/forgot password/verify_screen.dart';
@@ -79,6 +84,11 @@ class AppRoutes {
   static const String availability = "/availability_screen.dart";
   static const String identificationScreen = "/identification_screen.dart";
   static const String reviewScreen = "/review_screen.dart";
+  static const String doctorHome = "/doctor_home_screen.dart";
+  static const String patientsList = "/patients_list_screen.dart";
+  static const String appointmentList = "/appointment_list_screen.dart";
+  static const String patientsDetails = "/patients_details_screen.dart";
+  static const String additionalDetails = "/additional_details_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -121,5 +131,10 @@ class AppRoutes {
     GetPage(name: availability, page: () => AvailabilityScreen()),
     GetPage(name: identificationScreen, page: () => IdentificationScreen()),
     GetPage(name: reviewScreen, page: () => ReviewScreen()),
+    GetPage(name: doctorHome, page: () => DoctorHomeScreen()),
+    GetPage(name: patientsList, page: () => PatientsListScreen()),
+    GetPage(name: appointmentList, page: () => AppointmentListScreen()),
+    GetPage(name: patientsDetails, page: () => PatientsDetailsScreen()),
+    GetPage(name: additionalDetails, page: () => AdditionalDetailsScreen()),
   ];
 }

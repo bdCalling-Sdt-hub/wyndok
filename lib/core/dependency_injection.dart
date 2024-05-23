@@ -1,11 +1,15 @@
 import 'package:get/get.dart';
 import 'package:wyndok/controllers/doctor/info/availability_controller.dart';
 import 'package:wyndok/controllers/doctor/info/professional_qualifications_controller.dart';
+import 'package:wyndok/controllers/doctor/patients_info/appointment_list_controller.dart';
 
 import '../controllers/auth/sign_up_controller.dart';
 import '../controllers/doctor/info/Personal_information_controller.dart';
 import '../controllers/doctor/info/added_experience_controller.dart';
 import '../controllers/doctor/info/identification_controller.dart';
+import '../controllers/doctor/patients_details/patients_details_controller.dart';
+import '../controllers/doctor/patients_info/doctor_home_controller.dart';
+import '../controllers/doctor/patients_info/patients_list_controller.dart';
 import '../controllers/patients/Booking/Book_appointment_controller.dart';
 import '../controllers/patients/Booking/ambulance_booking_controller.dart';
 import '../controllers/patients/Booking/home_care_controller.dart';
@@ -42,5 +46,9 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => AddedExperienceController(), fenix: true);
     Get.lazyPut(() => AvailabilityController(), fenix: true);
     Get.lazyPut(() => IdentificationController(), fenix: true);
+    Get.lazyPut(() => DoctorHomeController(), fenix: true);
+    Get.lazyPut(() => PatientsListController(), fenix: true);
+    Get.lazyPut(() => AppointmentListController(), fenix: true);
+    Get.lazyPut(() => PatientsDetailsController(), fenix: true);
   }
 }
