@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../core/app_routes.dart';
 
 class PrefsHelper extends GetxController {
   static String token = "";
@@ -27,9 +28,11 @@ class PrefsHelper extends GetxController {
     myEmail = preferences.getString("myEmail") ?? "";
     isLogIn = preferences.getBool("isLogIn") ?? false;
     isNotifications = preferences.getBool("isNotifications") ?? true;
-    userType = preferences.getString("userType") ?? "doctor";
-    localizationCountryCode = preferences.getString("localizationCountryCode") ?? "US";
-    localizationLanguageCode = preferences.getString("localizationLanguageCode") ?? "en";
+    // userType = preferences.getString("userType") ?? "doctor";
+    localizationCountryCode =
+        preferences.getString("localizationCountryCode") ?? "US";
+    localizationLanguageCode =
+        preferences.getString("localizationLanguageCode") ?? "en";
 
     print(userId);
   }
@@ -46,9 +49,9 @@ class PrefsHelper extends GetxController {
     preferences.setString("myEmail", "");
     preferences.setBool("isLogIn", false);
     preferences.setBool("isNotifications", true);
-    preferences.setString("userType", "shopping");
+    preferences.setString("userType", "doctor");
 
-    // Get.offAllNamed(AppRoutes.login);
+    Get.offAllNamed(AppRoutes.signIn);
     getAllPrefData();
   }
 

@@ -15,11 +15,13 @@ class ProfessionalQualificationsController extends GetxController {
   ];
 
   List degrees = ["MBBS", "BDS", "BSN"];
+  List category = ["Dentistry", "Neurology", "General"];
 
   List years = ["2 years", "3 years", "4 years", "6 years"];
   List expertiseList = [];
 
   TextEditingController expertiseController = TextEditingController();
+  TextEditingController categoryController = TextEditingController();
   TextEditingController degreeController = TextEditingController();
   TextEditingController instituteController = TextEditingController();
   TextEditingController countryController = TextEditingController();
@@ -42,6 +44,12 @@ class ProfessionalQualificationsController extends GetxController {
       Utils.snackBarMessage(expertiseList.length.toString(),
           "your are already selected ${expertiseList.length}".tr);
     }
+  }
+
+  selectedCategory(int index) {
+    categoryController.text = category[index].toString();
+    update();
+    Get.back();
   }
 
   selectedDegree(int index) {

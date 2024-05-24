@@ -126,7 +126,8 @@ class LocalConstants extends Translations {
           "Title": "Title",
           "Country": "Country",
           "Professional Qualifications": "Professional Qualifications",
-          "Select your area of expertise(max 2)": "Select your area of expertise(max 2)",
+          "Select your area of expertise(max 2)":
+              "Select your area of expertise(max 2)",
           "Degree Name": "Degree Name",
           "Institute Name": "Institute Name",
           "Select Country": "Select Country",
@@ -141,18 +142,27 @@ class LocalConstants extends Translations {
           "Please select the days": "Please select the days",
           "Confirm your Identity": "Confirm your Identity",
           "Upload": "Upload",
-          "Upload your NID/Passport documents": "Upload your NID/Passport documents",
+          "Upload your NID/Passport documents":
+              "Upload your NID/Passport documents",
           "In Review": "In Review",
-          "Your application is under review": "Your application is under review",
-          "We will notify you as soon as your account has been approved": "We will notify you as soon as your account has been approved",
+          "Your application is under review":
+              "Your application is under review",
+          "We will notify you as soon as your account has been approved":
+              "We will notify you as soon as your account has been approved",
           "Patients List": "Patients List",
           "Appointment Request": "Appointment Request",
           "Patients Details": "Patients Details",
           "Booking Time": "Booking Time",
           "Accept": "Accept",
-          "You sure want to cancel appointment": "You sure want to cancel appointment?",
-
-
+          "You sure want to cancel appointment":
+              "You sure want to cancel appointment?",
+          "Edit Information": "Edit Information",
+          "Appointment History": "Appointment History",
+          "You sure want to logout": "You sure want to logout?",
+          "Registration Number": "Registration Number",
+          "Category": "Category",
+          "End Date": "End Date",
+          "Start Date": "Start Date",
         },
       };
 }

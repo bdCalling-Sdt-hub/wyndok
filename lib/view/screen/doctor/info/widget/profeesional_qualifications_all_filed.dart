@@ -84,6 +84,24 @@ class ProfessionalQualificationsAllFiled extends StatelessWidget {
               height: 16,
             ),
             CustomText(
+              text: "Category".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
+              top: 20.h,
+            ),
+            CustomTextField(
+              controller: controller.categoryController,
+              validator: OtherHelper.validator,
+              hindText: "Category".tr,
+              suffixIcon: PopUpMenu(
+                  items: controller.category,
+                  selectedItem: controller.categoryController.text,
+                  onTap: controller.selectedCategory),
+              fieldBorderRadius: 10.r,
+              keyboardType: TextInputType.none,
+            ),
+            CustomText(
               text: "Degree Name".tr,
               fontWeight: FontWeight.w700,
               fontSize: 20.sp,

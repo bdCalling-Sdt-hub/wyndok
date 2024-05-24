@@ -10,6 +10,7 @@ import 'package:wyndok/view/common_widgets/item.dart';
 
 import '../../../../utils/app_colors.dart';
 import '../../../common_widgets/bottom nav bar/navbar.dart';
+import '../../../common_widgets/pop up/success_pop_up.dart';
 import '../../../common_widgets/text/custom_text.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -101,7 +102,11 @@ class ProfileScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Item(icon: Icons.logout, title: "Log Out".tr),
+                Item(
+                  icon: Icons.logout,
+                  title: "Log Out".tr,
+                  onTap: () => PopUp.logOutPopUp(),
+                ),
               ],
             ),
           );

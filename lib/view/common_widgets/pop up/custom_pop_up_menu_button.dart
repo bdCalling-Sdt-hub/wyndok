@@ -7,16 +7,16 @@ import '../../../utils/app_colors.dart';
 import '../text/custom_text.dart';
 
 class PopUpMenu extends StatelessWidget {
-  PopUpMenu({
-    super.key,
-    required this.items,
-    required this.selectedItem,
-    required this.onTap,
-    this.height = 30,
-    this.selectedColor = AppColors.primaryColor,
-    this.unselectedColor = Colors.transparent,
-    this.style,
-  });
+  PopUpMenu(
+      {super.key,
+      required this.items,
+      required this.selectedItem,
+      required this.onTap,
+      this.height = 30,
+      this.selectedColor = AppColors.primaryColor,
+      this.unselectedColor = Colors.transparent,
+      this.style,
+      this.isContainer = false});
 
   final List items;
   final String selectedItem;
@@ -25,6 +25,7 @@ class PopUpMenu extends StatelessWidget {
   final double height;
   final Function(int index) onTap;
   TextStyle? style;
+  final bool isContainer;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,7 @@ class PopUpMenu extends StatelessWidget {
                 ),
               ],
           icon: Padding(
-            padding: EdgeInsets.only(left: 40.w),
+            padding: EdgeInsets.only(left: isContainer ? 40.w : 0),
             child: Icon(
               Icons.keyboard_arrow_down_outlined,
               color: Colors.black,

@@ -5,13 +5,16 @@ import 'package:wyndok/controllers/doctor/info/availability_controller.dart';
 import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 
+import '../../../common_widgets/bottom nav bar/doctor_nav_bar.dart';
 import '../../../common_widgets/text/custom_text.dart';
 import 'widget/hour_item.dart';
 import 'widget/registation_step.dart';
 import 'widget/week_item.dart';
 
 class AvailabilityScreen extends StatelessWidget {
-  const AvailabilityScreen({super.key});
+  AvailabilityScreen({super.key});
+
+  String type = Get.parameters["type"] ?? "";
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,9 @@ class AvailabilityScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Center(child: RegistrationStep(indexNumber: 4)),
+                type == "back"
+                    ? const SizedBox()
+                    : const Center(child: RegistrationStep(indexNumber: 4)),
                 SizedBox(
                   height: 20.h,
                 ),
@@ -97,12 +102,25 @@ class AvailabilityScreen extends StatelessWidget {
                 SizedBox(
                   height: 30.h,
                 ),
-                CustomButton(titleText: "Next".tr,  onTap: () => Get.toNamed(AppRoutes.identificationScreen),)
+                CustomButton(
+                  titleText: type == "back" ? "Save Changes".tr : "Next".tr,
+                  onTap: () {
+                    if (type == "back") {
+                      Get.back();
+                    } else {
+                      Get.toNamed(AppRoutes.identificationScreen);
+                    }
+                  },
+                )
               ],
             ),
           );
         },
       ),
+
+      bottomNavigationBar: type == "back"
+          ? const CustomDoctorBottomNavBar(currentIndex: 3)
+          : const SizedBox(),
     );
   }
 }

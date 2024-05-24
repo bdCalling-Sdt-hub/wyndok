@@ -7,12 +7,15 @@ import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 import 'package:wyndok/view/screen/doctor/info/widget/profeesional_qualifications_all_filed.dart';
 import 'package:wyndok/view/screen/doctor/info/widget/registation_step.dart';
 
+import '../../../common_widgets/bottom nav bar/doctor_nav_bar.dart';
 import '../../../common_widgets/text/custom_text.dart';
 
 class ProfessionalQualificationsScreen extends StatelessWidget {
   ProfessionalQualificationsScreen({super.key});
 
   final formKey = GlobalKey<FormState>();
+
+  String type = Get.parameters["type"] ?? "";
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +36,22 @@ class ProfessionalQualificationsScreen extends StatelessWidget {
               key: formKey,
               child: Column(
                 children: [
-                  const RegistrationStep(indexNumber: 2),
+                  type == "back"
+                      ? const SizedBox()
+                      : const RegistrationStep(indexNumber: 2),
                   SizedBox(
                     height: 20.h,
                   ),
                   const ProfessionalQualificationsAllFiled(),
                   CustomButton(
-                    titleText: "Next".tr,
+                    titleText: type == "back" ? "Save Changes".tr : "Next".tr,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
-                        Get.toNamed(AppRoutes.addedExperience);
+                        if (type == "back") {
+                          Get.back();
+                        } else {
+                          Get.toNamed(AppRoutes.addedExperience);
+                        }
                       }
                     },
                   ),
@@ -53,6 +62,10 @@ class ProfessionalQualificationsScreen extends StatelessWidget {
           );
         },
       ),
+
+      bottomNavigationBar: type == "back"
+          ? const CustomDoctorBottomNavBar(currentIndex: 3)
+          : const SizedBox(),
     );
   }
 }

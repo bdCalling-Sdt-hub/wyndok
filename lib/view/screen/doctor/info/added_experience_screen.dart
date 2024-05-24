@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../../../controllers/doctor/info/added_experience_controller.dart';
 import '../../../../core/app_routes.dart';
+import '../../../common_widgets/bottom nav bar/doctor_nav_bar.dart';
 import '../../../common_widgets/button/custom_button.dart';
 import '../../../common_widgets/text/custom_text.dart';
 import 'widget/added_experience_all_filed.dart';
@@ -13,6 +14,7 @@ class AddedExperienceScreen extends StatelessWidget {
   AddedExperienceScreen({super.key});
 
   final formKey = GlobalKey<FormState>();
+  String type = Get.parameters["type"] ?? "";
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +35,22 @@ class AddedExperienceScreen extends StatelessWidget {
               key: formKey,
               child: Column(
                 children: [
-                  const RegistrationStep(indexNumber: 3),
+                  type == "back"
+                      ? const SizedBox()
+                      : const RegistrationStep(indexNumber: 3),
                   SizedBox(
                     height: 20.h,
                   ),
                   const AddedExperienceAllFiled(),
                   CustomButton(
-                    titleText: "Next".tr,
+                    titleText: type == "back" ? "Save Changes".tr : "Next".tr,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
-                        Get.toNamed(AppRoutes.availability);
+                        if (type == "back") {
+                          Get.back();
+                        } else {
+                          Get.toNamed(AppRoutes.availability);
+                        }
                       }
                     },
                   ),
@@ -53,6 +61,9 @@ class AddedExperienceScreen extends StatelessWidget {
           );
         },
       ),
+      bottomNavigationBar: type == "back"
+          ? const CustomDoctorBottomNavBar(currentIndex: 3)
+          : const SizedBox(),
     );
   }
 }

@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:wyndok/controllers/doctor/profile/doctor_profile.dart';
+import 'package:wyndok/view/screen/doctor/history/appointment_history_screen.dart';
 import 'package:wyndok/view/screen/doctor/info/added_experience_screen.dart';
 import 'package:wyndok/view/screen/doctor/info/availability_screen.dart';
 import 'package:wyndok/view/screen/doctor/info/identification_screen.dart';
@@ -9,6 +11,7 @@ import 'package:wyndok/view/screen/doctor/patients_details/additional_details_sc
 import 'package:wyndok/view/screen/doctor/patients_details/patients_details_screen.dart';
 import 'package:wyndok/view/screen/doctor/patients_info/doctor_home_screen.dart';
 import 'package:wyndok/view/screen/doctor/patients_info/patients_list_screen.dart';
+import 'package:wyndok/view/screen/doctor/profile/doctor_profile.dart';
 import 'package:wyndok/view/screen/no_role/auth/change_password/change_password_screen.dart';
 import 'package:wyndok/view/screen/no_role/onboarding_screen/onboarding_screen.dart';
 import 'package:wyndok/view/screen/patients/Booking/ambulance_booking_screen.dart';
@@ -89,6 +92,8 @@ class AppRoutes {
   static const String appointmentList = "/appointment_list_screen.dart";
   static const String patientsDetails = "/patients_details_screen.dart";
   static const String additionalDetails = "/additional_details_screen.dart";
+  static const String doctorProfile = "/doctor_profile.dart";
+  static const String appointmentHistory = "/appointment_history_screen.dart";
 
   static List<GetPage> routes = [
     GetPage(name: test, page: () => TestScreen()),
@@ -136,5 +141,7 @@ class AppRoutes {
     GetPage(name: appointmentList, page: () => AppointmentListScreen()),
     GetPage(name: patientsDetails, page: () => PatientsDetailsScreen()),
     GetPage(name: additionalDetails, page: () => AdditionalDetailsScreen()),
+    GetPage(name: doctorProfile, page: () => DoctorProfile()),
+    GetPage(name: appointmentHistory, page: () => AppointmentHistoryScreen()),
   ];
 }

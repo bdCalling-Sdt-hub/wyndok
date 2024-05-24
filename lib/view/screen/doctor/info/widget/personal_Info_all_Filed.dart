@@ -111,11 +111,11 @@ class PersonalInfoAllFiled extends StatelessWidget {
               validator: OtherHelper.validator,
               hindText: "Date of birth".tr,
               suffixIcon: GestureDetector(
-                  onTap: () => OtherHelper.datePicker(
-                      controller.dateOfBrithController),
+                  onTap: () =>
+                      OtherHelper.datePicker(controller.dateOfBrithController),
                   child: const Icon(Icons.date_range)),
-              onTap: () => OtherHelper.datePicker(
-                  controller.dateOfBrithController),
+              onTap: () =>
+                  OtherHelper.datePicker(controller.dateOfBrithController),
               fieldBorderRadius: 10.r,
               keyboardType: TextInputType.none,
             ),
@@ -203,6 +203,20 @@ class PersonalInfoAllFiled extends StatelessWidget {
                   ],
                 )),
               ],
+            ),
+            CustomText(
+              text: "Registration Number".tr,
+              fontWeight: FontWeight.w700,
+              fontSize: 20.sp,
+              bottom: 12.h,
+              top: 20.sp,
+            ),
+            CustomTextField(
+              controller: controller.registrationNumberController,
+              validator: OtherHelper.validator,
+              hindText: "Registration Number".tr,
+              fieldBorderRadius: 10.r,
+              keyboardType: TextInputType.text,
             ),
             SizedBox(
               height: 20.h,

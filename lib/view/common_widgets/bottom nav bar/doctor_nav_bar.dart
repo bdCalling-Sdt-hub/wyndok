@@ -94,7 +94,9 @@ class _CustomDoctorBottomNavBarState extends State<CustomDoctorBottomNavBar> {
         Get.toNamed(AppRoutes.chat);
       }
     } else if (index == 3) {
-      if (!(widget.currentIndex == 3)) {}
+      if (!(widget.currentIndex == 3)) {
+        Get.toNamed(AppRoutes.doctorProfile);
+      }
     }
   }
 }

@@ -123,7 +123,7 @@ class AddedExperienceAllFiled extends StatelessWidget {
                       onTap: () {
                         OtherHelper.datePicker(controller.startDateController);
                       },
-                      hindText: "Passing Year".tr,
+                      hindText: "Start Date".tr,
                     ),
                   ],
                 )),
@@ -146,7 +146,7 @@ class AddedExperienceAllFiled extends StatelessWidget {
                             controller.endDateController),
                         child: const Icon(Icons.date_range),
                       ),
-                      hindText: "Duration".tr,
+                      hindText: "End Date".tr,
                     ),
                   ],
                 )),

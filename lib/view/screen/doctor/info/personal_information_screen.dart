@@ -7,12 +7,15 @@ import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 import 'package:wyndok/view/screen/doctor/info/widget/personal_Info_all_Filed.dart';
 import 'package:wyndok/view/screen/doctor/info/widget/registation_step.dart';
 
+import '../../../common_widgets/bottom nav bar/doctor_nav_bar.dart';
 import '../../../common_widgets/text/custom_text.dart';
 
 class PersonalInformationScreen extends StatelessWidget {
   PersonalInformationScreen({super.key});
 
   final formKey = GlobalKey<FormState>();
+
+  String type = Get.parameters["type"] ?? "";
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +36,20 @@ class PersonalInformationScreen extends StatelessWidget {
               key: formKey,
               child: Column(
                 children: [
-                  const RegistrationStep(indexNumber: 1),
+                  type == "back"
+                      ? const SizedBox()
+                      : const RegistrationStep(indexNumber: 1),
                   const PersonalInfoAllFiled(),
                   CustomButton(
-                    titleText: "Continue".tr,
+                    titleText:
+                        type == "back" ? "Save Changes".tr : "Continue".tr,
                     onTap: () {
                       if (formKey.currentState!.validate()) {
-                        Get.toNamed(AppRoutes.professionalQualifications);
+                        if (type == "back") {
+                          Get.back();
+                        } else {
+                          Get.toNamed(AppRoutes.professionalQualifications);
+                        }
                       }
                     },
                   ),
@@ -52,6 +62,9 @@ class PersonalInformationScreen extends StatelessWidget {
           );
         },
       ),
+      bottomNavigationBar: type == "back"
+          ? const CustomDoctorBottomNavBar(currentIndex: 3)
+          : const SizedBox(),
     );
   }
 }
