@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wyndok/core/app_routes.dart';
+import 'package:wyndok/helpers/prefs_helper.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 
@@ -53,7 +54,21 @@ class SignInScreen extends StatelessWidget {
             ),
             CustomButton(
               titleText: "Sign in".tr,
-              onTap: () => Get.toNamed(AppRoutes.doctorHome),
+              onTap: () {
+                Get.toNamed(AppRoutes.patientsHome);
+                PrefsHelper.userType = "patient";
+              },
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
+            CustomButton(
+              titleText:
+                  "Sign in with doctor(remove this button development part)".tr,
+              onTap: () {
+                Get.toNamed(AppRoutes.doctorHome);
+                PrefsHelper.userType = "doctor";
+              },
             ),
             GestureDetector(
               onTap: () => Get.offAllNamed(AppRoutes.forgotPassword),

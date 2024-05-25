@@ -129,7 +129,7 @@ class _MessageScreenState extends State<MessageScreen> {
                         textStyle: GoogleFonts.prompt(
                             fontSize: 14.h,
                             fontWeight: FontWeight.w400,
-                            color: AppColors.blackLightHover),
+                            color: AppColors.black),
                         fieldBorderColor: Colors.white,
                         fieldBorderRadius: 8,
                         controller: controller.messageController,

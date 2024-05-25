@@ -39,6 +39,13 @@ class _ShowGoogleMapState extends State<ShowGoogleMap> {
   }
 
   @override
+  void dispose() {
+    showGoogleMapController.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return GetBuilder<ShowGoogleMapController>(
       builder: (controller) {
@@ -56,7 +63,9 @@ class _ShowGoogleMapState extends State<ShowGoogleMap> {
             return marker;
           })),
           onMapCreated: (GoogleMapController googleMapController) {
-            controller.controller.complete(googleMapController);
+            if (controller.controller.isCompleted) {
+              controller.controller.complete(googleMapController);
+            }
           },
         );
       },

@@ -16,16 +16,20 @@ class PopUpMenu extends StatelessWidget {
       this.selectedColor = AppColors.primaryColor,
       this.unselectedColor = Colors.transparent,
       this.style,
-      this.isContainer = false});
+      this.isContainer = false,
+      this.iconColor = AppColors.black,
+      this.iconData = Icons.keyboard_arrow_down_outlined});
 
   final List items;
   final String selectedItem;
   final Color selectedColor;
+  final Color iconColor;
   final Color unselectedColor;
   final double height;
   final Function(int index) onTap;
   TextStyle? style;
   final bool isContainer;
+  final IconData iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -77,8 +81,8 @@ class PopUpMenu extends StatelessWidget {
           icon: Padding(
             padding: EdgeInsets.only(left: isContainer ? 40.w : 0),
             child: Icon(
-              Icons.keyboard_arrow_down_outlined,
-              color: Colors.black,
+              iconData,
+              color: iconColor,
               size: height,
             ),
           )),

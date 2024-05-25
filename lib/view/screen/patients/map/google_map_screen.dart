@@ -9,8 +9,22 @@ import '../../../common_widgets/bottom nav bar/navbar.dart';
 import '../../../common_widgets/text/custom_text.dart';
 import 'widget/map_doctor_item.dart';
 
-class GoogleMapScreen extends StatelessWidget {
-  const GoogleMapScreen({super.key});
+class GoogleMapScreen extends StatefulWidget {
+  GoogleMapScreen({super.key});
+
+  @override
+  State<GoogleMapScreen> createState() => _GoogleMapScreenState();
+}
+
+class _GoogleMapScreenState extends State<GoogleMapScreen> {
+  ShowGoogleMapController showGoogleMapController =
+      Get.put(ShowGoogleMapController());
+
+  @override
+  void dispose() {
+    showGoogleMapController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

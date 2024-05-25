@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wyndok/controllers/patients/home_controller.dart';
+import 'package:wyndok/controllers/patients/profile_controller.dart';
 import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/utils/app_icons.dart';
@@ -12,9 +13,10 @@ import 'package:wyndok/view/common_widgets/text/custom_text.dart';
 import 'package:wyndok/view/common_widgets/text_field/custom_text_field.dart';
 
 import '../../../common_widgets/bottom nav bar/navbar.dart';
+import '../../../common_widgets/pop up/custom_pop_up_menu_button.dart';
 
 class PatientsHomeScreen extends StatelessWidget {
-  const PatientsHomeScreen({super.key});
+  PatientsHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +43,26 @@ class PatientsHomeScreen extends StatelessWidget {
                       SizedBox(
                         height: 50.h,
                       ),
-                      CustomImage(
-                        imageSrc: AppIcons.logo,
-                        height: 29.h,
-                        imageColor: AppColors.white,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomImage(
+                            imageSrc: AppIcons.logo,
+                            height: 29.h,
+                            imageColor: AppColors.white,
+                          ),
+                          GetBuilder<ProfileController>(
+                            builder: (profileController) {
+                              return PopUpMenu(
+                                  items: profileController.languages,
+                                  iconData: Icons.g_translate,
+                                  iconColor: AppColors.white,
+                                  selectedItem:
+                                      profileController.selectedLanguage,
+                                  onTap: profileController.selectLanguage);
+                            },
+                          )
+                        ],
                       ),
                       CustomText(
                         text: "Let’s find Health Service".tr,
@@ -255,8 +273,12 @@ class PatientsHomeScreen extends StatelessWidget {
                                           ),
                                           const Spacer(),
                                           CustomText(
+                                              color: AppColors.orange,
                                               text: item["rating"].toString()),
-                                          const Icon(Icons.star)
+                                          const Icon(
+                                            Icons.star,
+                                            color: AppColors.orange,
+                                          )
                                         ],
                                       ),
                                       CustomText(

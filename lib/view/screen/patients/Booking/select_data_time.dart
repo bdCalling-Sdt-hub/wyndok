@@ -59,10 +59,11 @@ class SelectDataTime extends StatelessWidget {
                     ],
                   ),
                   child: CalendarDatePicker(
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(1900),
-                    lastDate: DateTime(2100),
-                    onDateChanged: controller.selectData,
+                      initialDate: controller.getInitialDate(),
+                      firstDate: DateTime(1900),
+                      lastDate: DateTime(2100),
+                      onDateChanged: controller.selectData,
+                      selectableDayPredicate: controller.disableDay
                   ),
                 ),
                 CustomText(

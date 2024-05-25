@@ -9,6 +9,8 @@ import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 import 'package:wyndok/view/common_widgets/image/custom_image.dart';
 import 'package:wyndok/view/screen/doctor/patients_details/widget/cancel_popup.dart';
 
+import '../../../../core/app_routes.dart';
+import '../../../../utils/app_icons.dart';
 import '../../../common_widgets/text/custom_text.dart';
 import 'widget/patients_details_all_field.dart';
 
@@ -62,7 +64,14 @@ class PatientsDetailsScreen extends StatelessWidget {
                           fontSize: 18.sp,
                         ),
                       ],
-                    ))
+                    )),
+                    GestureDetector(
+                      onTap: () => Get.toNamed(AppRoutes.message),
+                      child: CustomImage(
+                        imageSrc: AppIcons.chat,
+                        height: 30.sp,
+                      ),
+                    )
                   ],
                 ),
                 const PatientsDetailsAllFiled(),

@@ -7,7 +7,7 @@ class SignUpController extends GetxController {
   List list = ["Male", "Female", "Other"];
   List selectedOption = ["Patient", "Health Professional"];
 
-  String selectRole = "";
+  String selectRole = "Patient";
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();

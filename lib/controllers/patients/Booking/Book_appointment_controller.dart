@@ -5,7 +5,7 @@ import '../../../helpers/other_helper.dart';
 import 'package:intl/intl.dart';
 
 class BookAppointmentController extends GetxController {
-  List relatives = const ["Father", "Mother", "Brother", "Sister"];
+  List relatives = const ["My Self", "Father", "Mother", "Brother", "Sister"];
   List gender = const ["Male", "Female", "Other"];
   List selectHourOption = const [
     "9:00 AM",
@@ -41,6 +41,15 @@ class BookAppointmentController extends GetxController {
     hours: 9,
   );
 
+  DateTime getInitialDate() {
+    DateTime initialDate = DateTime.now();
+    while (initialDate.weekday == DateTime.saturday ||
+        initialDate.weekday == DateTime.sunday) {
+      initialDate = initialDate.add(const Duration(days: 1));
+    }
+    return initialDate;
+  }
+
   selectedRelative(int index) {
     patientsRelationController.text = relatives[index].toString();
     update();
@@ -56,6 +65,14 @@ class BookAppointmentController extends GetxController {
   openImage() async {
     image = await OtherHelper.openGallery();
     update();
+  }
+
+  bool disableDay(DateTime date) {
+    // Disable Saturdays and Sundays
+    if (date.weekday == DateTime.saturday || date.weekday == DateTime.sunday) {
+      return false;
+    }
+    return true;
   }
 
   selectData(value) {

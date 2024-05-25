@@ -23,7 +23,7 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
         return Column(
           children: [
             CustomTextField(
-              prefixIcon: const Icon(Icons.group),
+              prefixIcon: const Icon(Icons.group, color: AppColors.greyscale500,),
               labelText: "Full Name".tr,
               controller: controller.nameController,
             ),
@@ -32,7 +32,7 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
             ),
             CustomTextField(
               controller: controller.emailController,
-              prefixIcon: const Icon(Icons.mail),
+              prefixIcon: const Icon(Icons.mail, color: AppColors.greyscale500),
               labelText: "Email".tr,
             ),
             SizedBox(
@@ -40,7 +40,7 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
             ),
             CustomTextField(
               controller: controller.passwordController,
-              prefixIcon: const Icon(Icons.lock),
+              prefixIcon: const Icon(Icons.lock, color: AppColors.greyscale500),
               isPassword: true,
               labelText: "Password".tr,
             ),
@@ -77,7 +77,7 @@ class _SignUpAllFieldState extends State<SignUpAllField> {
             ),
             CustomTextField(
               controller: controller.addressController,
-              suffixIcon: const Icon(Icons.location_on),
+              suffixIcon: const Icon(Icons.location_on, color: AppColors.greyscale500),
               labelText: "Location".tr,
             ),
           ],

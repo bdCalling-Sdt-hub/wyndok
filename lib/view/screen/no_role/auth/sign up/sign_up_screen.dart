@@ -46,34 +46,39 @@ class SignUpScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Expanded(
-                      child: RadioListTile(
-                        title: CustomText(
+                    Row(
+                      children: [
+                        Radio(
+                            value: controller.selectedOption[0],
+                            groupValue: controller.selectRole,
+                            activeColor: AppColors.orange,
+                            onChanged: controller.setSelectedRole),
+                        CustomText(
                           text: controller.selectedOption[0],
-                          textAlign: TextAlign.start,
-                        ),
-                        value: controller.selectedOption[0],
-                        groupValue: controller.selectRole,
-                        selected: true,
-                        onChanged: (value) {
-                          controller.setSelectedRole(value);
-                        },
-                      ),
+                          fontSize: 18.sp,
+                          color: controller.selectRole ==
+                                  controller.selectedOption[0]
+                              ? AppColors.orange
+                              : AppColors.black,
+                        )
+                      ],
                     ),
-                    Expanded(
-                      child: RadioListTile(
-                        contentPadding: EdgeInsets.zero,
-                        activeColor: AppColors.primaryColor,
-                        title: CustomText(
+                    Row(
+                      children: [
+                        Radio(
+                            value: controller.selectedOption[1],
+                            groupValue: controller.selectRole,
+                            activeColor: AppColors.orange,
+                            onChanged: controller.setSelectedRole),
+                        CustomText(
                           text: controller.selectedOption[1],
-                          textAlign: TextAlign.start,
-                        ),
-                        value: controller.selectedOption[1],
-                        groupValue: controller.selectRole,
-                        onChanged: (value) {
-                          controller.setSelectedRole(value);
-                        },
-                      ),
+                          fontSize: 18.sp,
+                          color: controller.selectRole ==
+                                  controller.selectedOption[1]
+                              ? AppColors.orange
+                              : AppColors.black,
+                        )
+                      ],
                     ),
                   ],
                 ),

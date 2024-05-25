@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_images.dart';
 import 'package:wyndok/view/common_widgets/button/custom_button.dart';
 import 'package:wyndok/view/common_widgets/image/custom_image.dart';
@@ -33,11 +34,16 @@ class CancelPopup {
                   borderColor: AppColors.blueLightActive,
                   buttonColor: AppColors.transparent,
                   titleColor: AppColors.blue,
+                  onTap: () => Get.back(),
                 )),
                 SizedBox(
                   width: 16.w,
                 ),
-                Expanded(child: CustomButton(titleText: "Yes".tr))
+                Expanded(
+                    child: CustomButton(
+                  titleText: "Yes".tr,
+                  onTap: () => Get.offAllNamed(AppRoutes.doctorHome),
+                ))
               ],
             ),
           ],

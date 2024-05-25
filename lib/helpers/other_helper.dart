@@ -71,6 +71,14 @@ class OtherHelper {
       initialDate: DateTime.now(),
       firstDate: DateTime(1900),
       lastDate: DateTime(2101),
+      // selectableDayPredicate: (DateTime date) {
+      //   // Disable Saturdays and Sundays
+      //   if (date.weekday == DateTime.saturday ||
+      //       date.weekday == DateTime.sunday) {
+      //     return false;
+      //   }
+      //   return true;
+      // },
     );
     if (picked != null) {
       controller.text = "${picked.year}/${picked.month}/${picked.day}";

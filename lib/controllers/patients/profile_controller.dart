@@ -17,13 +17,9 @@ class ProfileController extends GetxController {
   TextEditingController weightController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
 
-
   TextEditingController currentPasswordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
-
-
-
 
   selectedGender(int index) {
     genderController.text = gender[index].toString();
@@ -33,6 +29,7 @@ class ProfileController extends GetxController {
 
   selectLanguage(int index) {
     selectedLanguage = languages[index];
+    print(selectedLanguage);
     update();
     Get.back();
   }

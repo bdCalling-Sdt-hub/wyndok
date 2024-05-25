@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:wyndok/core/app_routes.dart';
 import 'package:wyndok/utils/app_colors.dart';
 import 'package:wyndok/utils/app_icons.dart';
 import 'package:wyndok/view/common_widgets/text_field/custom_text_field.dart';
@@ -63,9 +64,12 @@ class AdditionalDetailsScreen extends StatelessWidget {
                         ),
                       ],
                     )),
-                    CustomImage(
-                      imageSrc: AppIcons.chat,
-                      height: 30.sp,
+                    GestureDetector(
+                      onTap: () => Get.toNamed(AppRoutes.message),
+                      child: CustomImage(
+                        imageSrc: AppIcons.chat,
+                        height: 30.sp,
+                      ),
                     )
                   ],
                 ),
